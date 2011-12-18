@@ -82,6 +82,8 @@ a {
 
 /* Buttons */ 
 .btn {
+  display: block;
+  padding: 10px;
   font-weight: bold;
   border: 1px solid #951100;
   color: #fff;
@@ -102,8 +104,12 @@ a {
 }
 
 /* header */
-header h2 {
+header h2.tagline {
   clear: both;
+  font-size: 14px;
+  color: #808182;
+  font-weight: normal;
+  line-height: 60px;
 }
 header.main {
   .logo {
@@ -121,6 +127,7 @@ header.main {
         padding-left: 20px;
       }
       a {
+        font-weight: bold;
         padding: 0 20px;
         height: 58px;
         line-height: 58px;
@@ -167,6 +174,36 @@ header.main {
 .left-sidebar {
   width: 16%;
   margin-right: 2%;
+  background-color: #fff;
+  border: 1px solid #d6e5e8;
+  padding: 11px;
+
+  ul {
+    margin-bottom: 11px;
+  }
+
+  li a {
+    color: #333;
+    display: block;
+    line-height: 30px; 
+    background: url("icons-sprite.png") transparent center left no-repeat;
+    padding-left: 30px;
+    &.magazines {background-position: 0 4px;}
+    &.shoes {background-position: 0 -26px;}
+    &.fruits {background-position: 0 -59px;}
+    &.organic {background-position: 0 -89px;}
+    &.wine {background-position: 0 -121px;}
+    &.microbrew {background-position: 0 -155px;}
+    &.farmers-market {background-position: 0 -186px;}
+    &.nutrition {background-position: 0 -215px;}
+    &.education {background-position: 0 -247px;}
+    &.health {background-position: 0 -278px;}
+    &.beauty {background-position: 0 -311px;}
+    &.fragrance {background-position: -2px -342px;}
+    &.fashion {background-position: 0 -373px;}
+    &.fresh-fish {background-position: 0 -404px;}
+    &.accessories {background-position: 0 -436px;}
+  }
 }
 .main-content {
   width: 50%;
