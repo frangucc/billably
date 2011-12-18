@@ -28,7 +28,9 @@
 
 %body{:class => "#{params[:controller]}-#{params[:action]}"}
   %header
-    %h1= "Billably"
+    %h1
+      %a{:href => "root_path", :title => "Billably"}
+        = image_tag('billably.png', :alt => "Billably")
     %h2= "Manage all your subscriptions in one place"
     %ul.cities
       %li= link_to("Chicago", "#")
