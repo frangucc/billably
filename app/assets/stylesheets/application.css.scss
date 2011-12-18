@@ -5,10 +5,45 @@
 @import "html5-reset.css";
 @import "home.css.scss";
 
+/* Variables ************************************************/
+$main-color: #0273dc; /* blue */
+
+/* Mixins ************************************************/
+@mixin border-radius ($amount: 4px){
+  -webkit-border-radius: $amount;
+  -moz-border-radius: $amount;
+  -ms-border-radius: $amount;
+  -o-border-radius: $amount;
+  border-radius: $amount;
+}
+@mixin btn-background-image ($color1, $color2, $color3, $color4){
+  background-color: $color1;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($color1 0%), to($color2 50%));
+  background-image: -webkit-linear-gradient(top, $color1 0%, $color2 50%, $color3 50%, $color4 100%);
+  background-image: -moz-linear-gradient(top, $color1 0%, $color2 50%, $color3 50%, $color4 100%);
+  background-image: -ms-linear-gradient(top, $color1 0%, $color2 50%, $color3 50%, $color4 100%);
+  background-image: -o-linear-gradient(top, $color1 0%, $color2 50%, $color3 50%, $color4 100%);
+  background-image: linear-gradient(top, $color1 0%, $color2 50%, $color3 50%, $color4 100%);
+}
+@mixin btn-single-box-shadow ($color){
+  -webkit-box-shadow: inset 0px 0px 0px 1px $color;
+  -moz-box-shadow: inset 0px 0px 0px 1px $color;
+  -ms-box-shadow: inset 0px 0px 0px 1px $color;
+  -o-box-shadow: inset 0px 0px 0px 1px $color;
+  box-shadow: inset 0px 0px 0px 1px $color;
+}
+@mixin btn-multiple-box-shadow ($color1, $color2){
+  -webkit-box-shadow: inset 0px 0px 0px 1px $color1, 0 1px 3px $color2;
+  -moz-box-shadow: inset 0px 0px 0px 1px $color1, 0 1px 3px $color2;
+  -ms-box-shadow: inset 0px 0px 0px 1px $color1, 0 1px 3px $color2;
+  -o-box-shadow: inset 0px 0px 0px 1px $color1, 0 1px 3px $color2;
+  box-shadow: inset 0px 0px 0px 1px $color1, 0 1px 3px $color2;
+}
+
 /* Global Styles ************************************************/
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
+  font-size: 14px;
   color: #333;
   line-height: 1.5em;
   background: url("tiled-bg.png") #fff top left repeat-x;
@@ -42,48 +77,26 @@ em, i {font-style: italic;}
 /* links */
 a {
   text-decoration: none;
-  color: #333333;
+  color: $main-color;
 }
 
 /* Buttons */ 
 .btn {
-  cursor: pointer;
-  display: inline-block;
-  background-color: #e6e6e6;
-  background-repeat: no-repeat;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  padding: 5px 14px 6px;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  color: #333;
-  line-height: normal;
-  border: 1px solid #ccc;
-  border-bottom-color: #bbb;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -webkit-transition: 0.1s linear all;
-  -moz-transition: 0.1s linear all;
-  transition: 0.1s linear all;
-  font-weight: bold;
-  margin-bottom: 1.5em;
+  border: 1px solid #951100;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+  @include btn-background-image(#ee432e, #c63929, #b51700, #891100);
+  @include border-radius(5px);
+  @include btn-multiple-box-shadow(rgba(255, 115, 100, 0.4), #333333);
 
   &:hover {
-    background-position: 0 -15px;
-    color: #333;
-    text-decoration: none;
+    @include btn-background-image(#f37873, #db504d, #cb0500, #a20601);
+    cursor: pointer; 
   }
   &:active {
-    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+    @include btn-background-image(#d43c28, #ad3224, #9c1500, #700d00);
+    @include btn-single-box-shadow(rgba(255, 115, 100, 0.4));
   }
 }
 
@@ -106,6 +119,11 @@ header.main {
         height: 58px;
         line-height: 58px;
         display: block;
+        &.btn {
+          height: 38px;
+          line-height: 38px;
+          margin-top: 9px;
+        }
       }
     }
   }
