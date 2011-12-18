@@ -1,2 +1,77 @@
 %h1= "Home"
 
+%section.secondary-navigation
+  %h1.hidden= "Secondary navigation"
+  %ul
+    %li.magazines= link_to_unless_current("Magazines", "#")
+    %li.shoes= link_to_unless_current("Shoes", "#")
+    %li.fruits= link_to_unless_current("Fruits", "#")
+    %li.organic= link_to_unless_current("Organic", "#")
+    %li.wine= link_to_unless_current("Wine", "#")
+    %li.microbrew= link_to_unless_current("Microbrew", "#")
+    %li.farmers-market= link_to_unless_current("Farmers Market", "#")
+    %li.nutrition= link_to_unless_current("Nutrition", "#")
+    %li.education= link_to_unless_current("Education", "#")
+    %li.health= link_to_unless_current("Health", "#")
+    %li.beauty= link_to_unless_current("Beauty", "#")
+    %li.fragrance= link_to_unless_current("Fragrance", "#")
+    %li.fashion= link_to_unless_current("Fashion", "#")
+    %li.fresh-fish= link_to_unless_current("Fresh Fish", "#")
+    %li.accessories= link_to_unless_current("Accessories", "#")
+  =link_to("Expand All", "#")
+
+%section.main-content
+  = image_tag('bread.png')
+  = link_to("Merchant Details", "#")
+
+  = image_tag('user.png')
+  %h1
+    = link_to("D'Amato's Bakery")
+    = " - Chicago, Illinois"
+  %ul
+    %li= "923 Members"
+    %li= "392 Reviews"
+
+  = image_tag('logo.png')
+
+  %section
+    %h1= "Quick Subscription Information"
+    %div#tabs
+      %ul
+        %li= link_to("General Info", "#general-info")
+        %li= link_to("Shipping Info", "#shipping-info")
+        %li= link_to("Details", "details")
+      %div#general-info
+        %p= "Chicago's premier fresh sustainably sourced fresh fish and seafood market. We specialize in cutting sushi quality fresh globally sourced fish every day. Fish, seafood, home made gourmet foods to go."
+        %p= "Fish options include:"
+        %ul
+          %li= "Atlantic Salmon"
+          %li= "Ahi Tuna"
+          %li= "Chilean Seabass"
+          %li= "Porgies"
+        %p= link_to("See configuration options", "#")
+      %div#shipping-info
+      %div#details
+
+%aside
+  %h1.hidden= "Delivery options"
+  %form
+    %fieldset
+      %legend= "Get Fresh Bread Delivered"
+      %input{:type => "radio", :name => "frequency", :value => "1", :class => "option"}
+      %input{:type => "radio", :name => "frequency", :value => "3", :class => "option"}
+      %input{:type => "radio", :name => "frequency", :value => "6", :class => "option"}
+      %input{:type => "radio", :name => "frequency", :value => "9", :class => "option"}
+    %fieldset
+      %legend= "Monthly"
+      %input{:type => "checkbox", :value => "on", :class => "switch"}
+        %p.message
+          = "Get fresh bread delivered from"
+          = link_to("D'Amatos Bakery", "#")
+          = "weekly or monthly for $29.00 & up."
+          = link_to("Learn More", "#")
+  %div#map
+
+  %h1= "How Billably Works"
+  = image_tag('video.png')
+
