@@ -147,6 +147,10 @@ header.main {
 /* footer */
 footer {
   clear: both;
+  li {
+    float: left;
+    margin-right: 10px;
+  }
   a:hover {
     text-decoration: underline; 
   }

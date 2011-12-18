@@ -4,4 +4,8 @@
 
 .as-seen-on {
   clear: both;
+  li {
+    float: left;
+    margin-right: 10px;
+  }
 }
