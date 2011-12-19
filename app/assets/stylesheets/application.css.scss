@@ -222,12 +222,26 @@ img {
 /* footer */
 footer {
   clear: both;
+  font-size: 12px;
   li {
     float: left;
-    margin-right: 10px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    border-right: 1px solid #dedede;
+    padding-right: 1em;
+    line-height: 12px;
   }
   a:hover {
     text-decoration: underline; 
+  }
+  p {
+    clear: both;
+    float: left;
+    margin-right: 1em;
+    line-height: 12px;
+    &.copyright {
+      color: #b5b5b5;
+    }
   }
 }
 

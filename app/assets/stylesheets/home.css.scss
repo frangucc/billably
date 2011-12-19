@@ -44,6 +44,7 @@
     width: 80%;
   }
   .quick-subscription {
+    margin-bottom: 3em;
     h1 {
       clear: both;
     }
@@ -84,10 +85,21 @@
     }
   }
   .as-seen-on {
+    height: 37px;
+    margin-bottom: 3em;
+    h1 {
+      float: left;
+      line-height: 37px;
+      margin-right: 1em;
+      font-style: italic;
+      color: #6d6d6d;
+      font-size: 14px;
+    }
     clear: both;
     li {
       float: left;
-      margin-right: 10px;
+      padding: 0 3%;
     }
   }
 }
+
