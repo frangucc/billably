@@ -52,8 +52,9 @@
             %li= "Porgies"
           %p= link_to("See configuration options", "#")
         %section
-          %h1= "Damato's video"
-          = image_tag('content/damatos-video.png', :alt => "D'Amato Video")
+          %h1= "D'Amato's video"
+          %a{:href => "http://vimeo.com/8245346", :rel => "prettyPhoto", :title => "How Billably Works"}
+            = image_tag('content/damatos-video.png', :alt => "D'Amato's Video")
       %div#shipping-info.hidden
       %div#details.hidden
 
@@ -84,7 +85,8 @@
 
   %section.how-it-works
     %h1.secondary-heading= "How Billably Works"
-    = image_tag('content/video.png')
+    %a{:href => "http://vimeo.com/8245346", :rel => "prettyPhoto", :title => "How Billably Works"}
+      = image_tag('content/video.png', :alt => "How Billably Works")
 
 %section.as-seen-on
   %h1= "As seen on:"
