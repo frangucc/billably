@@ -36,12 +36,12 @@
 
   %section.quick-subscription
     %h1.secondary-heading= "Quick Subscription Information"
-    %div#tabs
-      %ul
-        %li= link_to("General Info", "#general-info", :class => "active")
-        %li= link_to("Shipping Info", "#shipping-info")
-        %li= link_to("Details", "details")
-      %div#general-info
+    %div.tab-wrapper
+      %ul.tab
+        %li= link_to("General Info", "#", :rel => "tab1", :class => "defaulttab")
+        %li= link_to("Shipping Info", "#", :rel => "tab2")
+        %li= link_to("Details", "#", :rel => "tab3")
+      %div#tab1.tab-content.general-info
         %p= "Chicago's premier fresh sustainably sourced fresh fish and seafood market. We specialize in cutting sushi quality fresh globally sourced fish every day. Fish, seafood, home made gourmet foods to go."
         %section
           %h1= "Fish options include"
@@ -55,8 +55,10 @@
           %h1= "D'Amato's video"
           %a{:href => "http://vimeo.com/8245346", :rel => "prettyPhoto", :title => "How Billably Works"}
             = image_tag('content/damatos-video.png', :alt => "D'Amato's Video")
-      %div#shipping-info.hidden
-      %div#details.hidden
+      %div#tab2.tab-content
+        %p= "Content"
+      %div#tab3.tab-content
+        %p= "Content"
 
 %section.right-sidebar
   %section

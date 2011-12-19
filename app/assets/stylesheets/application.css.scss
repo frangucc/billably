@@ -59,34 +59,47 @@ a {
 }
 
 /* Tabs */
-#tabs li a {
-  padding: 0.5em 1em;
-  margin-right: 1em;
-  float: left;
-  @include tab-background-image(#ffffff, #ececec);
-  @include border-radius(3px);
-  border: 1px solid #e6e6e6;
-  border-bottom: 1px solid #bbb;
-  color: #333;
-  text-shadow: 0 1px 0 #eee;
-  margin-bottom: 1em;
-  &:hover {
-    @include tab-background-image(#eeeeee, #cccccc);
-    border: 1px solid #bbb;
-    border-bottom: 1px solid #999;
-    cursor: pointer;
-    text-shadow: 0 1px 0 #ddd; 
+.tab-wrapper {
+  @include frame;
+  width: 96%;
+  padding: 2%;
+  overflow: auto;
+  ul.tab li a {
+    padding: 0.5em 1em;
+    margin-right: 1em;
+    float: left;
+    @include tab-background-image(#ffffff, #ececec);
+    @include border-radius(3px);
+    border: 1px solid #e6e6e6;
+    border-bottom: 1px solid #bbb;
+    color: #333;
+    text-shadow: 0 1px 0 #eee;
+    margin-bottom: 1em;
+    &:hover {
+      @include tab-background-image(#eeeeee, #cccccc);
+      border: 1px solid #bbb;
+      border-bottom: 1px solid #999;
+      cursor: pointer;
+      text-shadow: 0 1px 0 #ddd; 
+    }
+    &:active {
+      border: 1px solid #aaa;
+      border-bottom: 1px solid #888;
+      @include btn-multiple-box-shadow(#aaaaaa, #eeeeee);
+    }
+    &.active {
+      @include tab-background-image(#6d6d6d, #4c4c4c);
+      border-color: #252525;
+      color: #ffffff;
+      text-shadow: 0 1px 0 #000000;
+    }
   }
-  &:active {
-    border: 1px solid #aaa;
-    border-bottom: 1px solid #888;
-    @include btn-multiple-box-shadow(#aaaaaa, #eeeeee);
+  .tab-content {
+    clear: both;
   }
-  &.active {
-    @include tab-background-image(#6d6d6d, #4c4c4c);
-    border-color: #252525;
-    color: #ffffff;
-    text-shadow: 0 1px 0 #000000;
+  .general-info section {
+    width: 50%;
+    float: left;
   }
 }
 

@@ -48,19 +48,6 @@
     h1 {
       clear: both;
     }
-    #tabs {
-      @include frame;
-      width: 96%;
-      padding: 2%;
-      overflow: auto;
-      p {
-        clear: both;
-      }
-      #general-info section {
-        width: 50%;
-        float: left;
-      }
-    }
   }
   legend {
     font-size: 26px;

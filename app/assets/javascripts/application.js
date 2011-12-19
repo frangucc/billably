@@ -9,5 +9,23 @@
 //= require_tree .
 //
 $(document).ready(function(){
+  //  Video Lightbox
   $("a[rel^='prettyPhoto']").prettyPhoto();
+
+  // Tabs
+  $('.tab a').click(function(e){
+    switch_tab($(this));
+    e.preventDefault();
+  });
+  switch_tab($('.defaulttab'));
 });
+
+// Tabs
+function switch_tab(obj){
+  $('.tab-content').hide();
+  $('.tab a').removeClass("active");
+  var id = obj.attr("rel");
+
+  $('#'+id).show();
+  obj.addClass("active"); 
+}
