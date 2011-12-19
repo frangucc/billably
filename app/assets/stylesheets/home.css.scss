@@ -8,8 +8,52 @@
   .main-img,
   .user-img,
   .merchant-info {
-    padding: 11px;
+    padding: 2%;
     @include frame;
+    margin-bottom: 1em;
+    h1 {
+      font-size: 14px;
+      margin-bottom: 1em;
+      display: inline;
+    }
+    li {
+      float: left;
+      padding-right: 3px;
+      color: #757575;
+      font-size: 12px;
+      &.last::before {
+        content: " | ";
+      }
+    }
+    img {
+      float: right;
+      padding: 0 20px;
+      border-left: 1px solid #efefef;
+    }
+  }
+  .main-img {
+    max-width: 96%;
+  }
+  .user-img {
+    float: left;
+    padding: 1%;
+    width: 12%;
+  }
+  .merchant-info {
+    float: right;
+    width: 80%;
+  }
+  .quick-subscription {
+    h1 {
+      clear: both;
+      color: $main-color;
+      margin-bottom: 1em;
+    }
+    #tabs {
+      @include frame;
+      width: 96%;
+      padding: 2%;
+    }
   }
 
 

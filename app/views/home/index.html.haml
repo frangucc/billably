@@ -25,16 +25,16 @@
   = image_tag('content/user.png', :alt => "Username", :class => "user-img")
 
   %div.merchant-info
+    = image_tag('content/logo.png', :alt => "D'Amato Bakery")
+
     %h1
       = link_to("D'Amato's Bakery")
       = " - Chicago, Illinois"
     %ul
       %li= "923 Members"
-      %li= "392 Reviews"
+      %li.last= "392 Reviews"
 
-    = image_tag('content/logo.png', :alt => "D'Amato Bakery")
-
-  %section
+  %section.quick-subscription
     %h1= "Quick Subscription Information"
     %div#tabs
       %ul

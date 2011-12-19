@@ -19,18 +19,6 @@ body {
 h1, h2, h3 {
   font-weight: bold;
 }
-h1 {
-  font-size: 1.5em;
-  line-height: 1em;
-}
-h2 {
-  font-size: 1.375em;
-  line-height: 1.0909em;
-}
-h3 {
-  font-size: 1.25em;
-  line-height: 1.2em;
-}
 
 /* paragraphs */
 p {
@@ -141,7 +129,7 @@ header.main {
   margin-right: 2%;
   background-color: #fff;
   border: 1px solid #d6e5e8;
-  padding: 11px;
+  padding: 2%;
 
   ul {
     margin-bottom: 11px;
@@ -170,13 +158,14 @@ header.main {
   }
 }
 .main-content {
-  width: 50%;
-  margin-right: 2%;
+  width: 47%;
 }
 .right-sidebar {
-  width: 30%;
+  float: right;
+  width: 25%;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.1);
 }
-
 
 /* footer */
 footer {
