@@ -2,10 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.as-seen-on {
-  clear: both;
-  li {
-    float: left;
-    margin-right: 10px;
+@import "shared.css.scss";
+
+.home-controller {
+  .main-img,
+  .user-img,
+  .merchant-info {
+    padding: 11px;
+    @include frame;
   }
+
+
+  .as-seen-on {
+    clear: both;
+    li {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+
 }
