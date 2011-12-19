@@ -57,7 +57,48 @@ a {
   }
 }
 
-/* header */
+/* Tabs */
+#tabs li a {
+  padding: 0.5em 1em;
+  margin-right: 1em;
+  float: left;
+  @include tab-background-image(#ffffff, #ececec);
+  @include border-radius(3px);
+  border: 1px solid #e6e6e6;
+  border-bottom: 1px solid #bbb;
+  color: #333;
+  text-shadow: 0 1px 0 #eee;
+  margin-bottom: 1em;
+  &:hover {
+    @include tab-background-image(#eeeeee, #cccccc);
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #ddd; 
+  }
+  &:active {
+    border: 1px solid #aaa;
+    border-bottom: 1px solid #888;
+    @include btn-multiple-box-shadow(#aaaaaa, #eeeeee);
+  }
+  &.active {
+    @include tab-background-image(#6d6d6d, #4c4c4c);
+    border-color: #252525;
+    color: #ffffff;
+    text-shadow: 0 1px 0 #000000;
+  }
+}
+
+/* Lists */
+ul.bullets {
+  margin-bottom: 1em;
+  li {
+    margin-left: 1em;
+    list-style: disc inside;
+  }
+}
+
+/* Header */
 header h2.tagline {
   clear: both;
   font-size: 14px;
@@ -116,6 +157,19 @@ header.main {
 .hidden {
   display: none;
 }
+.message {
+  background-color: #feffe2;
+  @include border-radius(3px);
+  padding: 3px;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+}
+.secondary-heading {
+  color: $main-color;
+  margin-bottom: 1em;
+}
 
 /* layout */ /* 16 + 2 + 50 + 2 + 30 */
 .left-sidebar,
@@ -162,9 +216,7 @@ header.main {
 }
 .right-sidebar {
   float: right;
-  width: 25%;
-  padding: 2%;
-  background-color: rgba(0, 0, 0, 0.1);
+  width: 29%;
 }
 
 /* footer */
@@ -188,6 +240,11 @@ footer {
 @media screen and (max-width: 1250px) { 
   .wrapper {
     width: 90%;
+  }
+}
+@media screen and (max-width: 900px) { 
+  .wrapper {
+    width: 810px;
   }
 }
 

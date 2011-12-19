@@ -46,17 +46,43 @@
   .quick-subscription {
     h1 {
       clear: both;
-      color: $main-color;
-      margin-bottom: 1em;
     }
     #tabs {
       @include frame;
       width: 96%;
       padding: 2%;
+      overflow: auto;
+      p {
+        clear: both;
+      }
+      #general-info section {
+        width: 50%;
+        float: left;
+      }
     }
   }
-
-
+  legend {
+    font-size: 26px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+  }
+  form,
+  .message {
+    margin-bottom: 1em;
+  }
+  .location,
+  .how-it-works img {
+    @include frame;
+    padding: 3%;
+  }
+  .location {
+    margin-bottom: 1em;
+    p {
+      background: url("location-icon.png") transparent center left no-repeat;
+      padding-left: 20px;
+    }
+  }
   .as-seen-on {
     clear: both;
     li {
@@ -64,5 +90,4 @@
       margin-right: 10px;
     }
   }
-
 }

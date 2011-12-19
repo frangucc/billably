@@ -35,45 +35,56 @@
       %li.last= "392 Reviews"
 
   %section.quick-subscription
-    %h1= "Quick Subscription Information"
+    %h1.secondary-heading= "Quick Subscription Information"
     %div#tabs
       %ul
-        %li= link_to("General Info", "#general-info")
+        %li= link_to("General Info", "#general-info", :class => "active")
         %li= link_to("Shipping Info", "#shipping-info")
         %li= link_to("Details", "details")
       %div#general-info
         %p= "Chicago's premier fresh sustainably sourced fresh fish and seafood market. We specialize in cutting sushi quality fresh globally sourced fish every day. Fish, seafood, home made gourmet foods to go."
-        %p= "Fish options include:"
-        %ul
-          %li= "Atlantic Salmon"
-          %li= "Ahi Tuna"
-          %li= "Chilean Seabass"
-          %li= "Porgies"
-        %p= link_to("See configuration options", "#")
-      %div#shipping-info
-      %div#details
+        %section
+          %h1= "Fish options include"
+          %ul.bullets
+            %li= "Atlantic Salmon"
+            %li= "Ahi Tuna"
+            %li= "Chilean Seabass"
+            %li= "Porgies"
+          %p= link_to("See configuration options", "#")
+        %section
+          %h1= "Damato's video"
+          = image_tag('content/damatos-video.png', :alt => "D'Amato Video")
+      %div#shipping-info.hidden
+      %div#details.hidden
 
 %section.right-sidebar
-  %h1.hidden= "Delivery options"
-  %form
-    %fieldset
-      %legend= "Get Fresh Bread Delivered"
-      %input{:type => "radio", :name => "frequency", :value => "1", :class => "option"}
-      %input{:type => "radio", :name => "frequency", :value => "3", :class => "option"}
-      %input{:type => "radio", :name => "frequency", :value => "6", :class => "option"}
-      %input{:type => "radio", :name => "frequency", :value => "9", :class => "option"}
-    %fieldset
-      %legend= "Monthly"
-      %input{:type => "checkbox", :value => "on", :class => "switch"}
-        %p.message
-          = "Get fresh bread delivered from"
-          = link_to("D'Amatos Bakery", "#")
-          = "weekly or monthly for $29.00 & up."
-          = link_to("Learn More", "#")
-  %div#map
+  %section
+    %h1.hidden= "Delivery options"
+    %form
+      %fieldset
+        %legend= "Fresh Bread Delivered"
+        %input{:type => "radio", :name => "frequency", :value => "1", :class => "option"}
+        %input{:type => "radio", :name => "frequency", :value => "3", :class => "option"}
+        %input{:type => "radio", :name => "frequency", :value => "6", :class => "option"}
+        %input{:type => "radio", :name => "frequency", :value => "9", :class => "option"}
+      %fieldset
+        %legend= "Monthly"
+        %input{:type => "checkbox", :value => "on", :class => "switch"}
+          %p.message
+            = "Get fresh bread delivered from"
+            = link_to("D'Amatos Bakery", "#")
+            = "weekly or monthly for $29.00 & up."
+            = link_to("Learn More", "#")
+  %section.location
+    %h1.hidden= "Location"
+    = image_tag('content/map.png')
+    %p
+      = link_to("D'Amatos Bakery")
+      = ", Chicago, Illinois"
 
-  %h1= "How Billably Works"
-  = image_tag('content/video.png')
+  %section.how-it-works
+    %h1.secondary-heading= "How Billably Works"
+    = image_tag('content/video.png')
 
 %section.as-seen-on
   %h1= "As seen on"
