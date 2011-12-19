@@ -97,7 +97,7 @@ a {
   .tab-content {
     clear: both;
   }
-  .general-info section {
+  .general-info section { 
     width: 50%;
     float: left;
   }
@@ -110,6 +110,11 @@ ul.bullets {
     margin-left: 1em;
     list-style: disc inside;
   }
+}
+
+/* Emphasized text */
+.emphasized {
+  font-family: 'Lobster', cursive;
 }
 
 /* Header */
