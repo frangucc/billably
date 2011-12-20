@@ -17,7 +17,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'sass'
+gem 'sass-rails'
 gem 'bourbon', '~> 1.2.0'
 
 # Use unicorn as the web server
