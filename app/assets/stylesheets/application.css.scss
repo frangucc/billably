@@ -1,12 +1,12 @@
 /*
- Name: Billable Styles
+ Name: Billably Styles
  *= require_self
 */
 @import "bourbon";
-@import "shared.css.scss";
-@import "html5-reset.css";
-@import "home.css.scss";
-@import "prettyPhoto.css.scss";
+@import "shared";
+@import "html5-reset";
+@import "home";
+@import "prettyPhoto";
 
 /* Global Styles ************************************************/
 body {
@@ -36,7 +36,7 @@ a {
   color: $main-color;
 }
 
-/* Buttons */ 
+/* Buttons */
 .btn {
   display: block;
   padding: 10px;
@@ -44,17 +44,44 @@ a {
   border: 1px solid #951100;
   color: #fff;
   text-align: center;
-  text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
   @include border-radius(5px);
-  @include linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 51%, #891100 100%);
+  @include linear-gradient(top, #ff69a6 0%, #ff2c83 50%, #f50166 51%, #f4074b 100%);
   @include box-shadow(inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 1px 3px #333333);
-
   &:hover {
-    @include linear-gradient(top, #f37873 0%, #db504d 50%, #cb0500 51%, #a20601 100%);
+    @include linear-gradient(top, #ffa6ca 0%, #fc4a93 50%, #f50166 51%, #f4074b 100%);
   }
   &:active {
-    @include linear-gradient(top, #d43c28 0%, #ad3224 50%, #9c1500 51%, #700d00 100%);
+    @include linear-gradient(top, #fc87b7 0%, #ff2780 50%, #db005b 51%, #d60944 100%);
     @include box-shadow(inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4));
+  }
+
+  &.secondary {
+    @include linear-gradient(top, #fff284 0%, #ffe961 50%, #f8da21 51%, #f5ce04 100%);
+    border-color: #c49b00;
+    color: #3b3100;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.8);
+    &:hover {
+      @include linear-gradient(top, #fff7b6 0%, #fbea7f 50%, #f5da36 51%, #ffdb1e 100%);
+      color: #1e1900;
+    }
+    &:active {
+      @include linear-gradient(top, #faef98 0%, #fae561 50%, #f4d51b 51%, #e5c000 100%);
+    }
+  }
+
+  &.tertiary {
+    @include linear-gradient(top, #bade87 0%, #96d35e 50%, #77be37 51%, #6cb937 100%);
+    border-color: #366301;
+    color: #143000;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.8);
+    &:hover {
+      @include linear-gradient(top, #ceeea0 0%, #a9d87d 50%, #77be37 51%, #6cb937 100%);
+      color: #0c1c00;
+    }
+    &:active {
+       @include linear-gradient(top, #9ec16d 0%, #81be4a 50%, #64a727 51%, #5a9f2a 100%);
+    }
   }
 }
 
@@ -158,6 +185,7 @@ header.main {
     float: left;
     margin-top: 33px;
     position: relative;
+    z-index: 9999;
     .current-city {
       color: #333;
       font-size: 18px;

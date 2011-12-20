@@ -19,7 +19,13 @@ $(document).ready(function(){
   });
   switch_tab($('.defaulttab'));
 
-  // Switchs
+  // Options
+  $(".option").click(function(){
+    $(".option").removeClass("active");
+    $(this).addClass("active");
+  });
+
+  // Switches
   $.fn.changelabel = function(text){
     $(this).children('.label').html(text);
   }

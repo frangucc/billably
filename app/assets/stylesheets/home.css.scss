@@ -34,8 +34,19 @@
       border-left: 1px solid #efefef;
     }
   }
+  .main-img-wrapper {
+    position: relative;
+    margin-bottom: 1em;
+    .btn {
+      position: absolute;
+      bottom: 30px;
+      right: 21px;
+      width: 10em;
+    }
+  }
   .main-img {
     max-width: 96%;
+    margin: 0;
   }
   .user-img {
     float: left;
@@ -67,65 +78,75 @@
     background: url("get.png") transparent left top no-repeat;
     padding: 20px 27px 0 27px;
   }
-  /* Switches */
-  .option.active,
+  /* Options */
+  .options {
+    width: 223px;
+    margin: 0 auto;
+    overflow: auto;
+    .option {
+      color: #666;
+      border: 1px solid #ccc;
+      text-shadow: 0 1px 1px #ffffff;
+      float: left;
+      margin: 0;
+      font-size: 24px;
+      padding: 10px 10px 15px 10px;
+      width: auto;
+      height: auto;
+      margin-right: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      @include border-radius(5px);
+      @include box-shadow(0 2px 6px #ccc inset, 0 1px 1px #fff);
+
+      &.active {
+        color: #fff;
+        text-shadow: 0 1px 1px #003465;
+        @include linear-gradient(top, #046fd4 0%, #014c91 100%);
+        @include box-shadow(0 1px 1px #fff);
+      }
+      &.last {
+        margin-right: 0;
+      }
+    }
+  }
+  /* Switch */
   .buttontrack {
     width: 100px;
     height: 30px;
     border: 1px solid #444;
-    background: #1f9aea;
     overflow: hidden;
     margin: 0;
     color: white;
     @include border-radius(5px);
     @include box-shadow(0 2px 6px #084f7d inset, 0 1px 1px #fff);
-  }
-  .option,
-  .button {
-    background: #efefef;
-    border: 1px solid #0e517d;
-    width: 50px;
-    height: 25px;
-    margin: -1px 0 0 -1px;
-    text-align: center;
-    padding: 5px 0 0 0;
-    cursor: pointer;
-    color: #8b8b8b;
-    font-weight: bold;
-    @include border-radius(5px);
-  }
-  .button {
-    @include box-shadow(0 2px 2px #fff inset, 0 0 10px #d7d7d7 inset, 0 0 10px #084f7d);
-  }
-  .label {
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #444;
-    text-shadow: 0 2px 1px #fff;
-    font-size: 100%;
-    padding: 100px 0 0 0;
-  }
-  .option,
-  .option.active {
-    float: left;
-    margin: 0;
-    font-size: 24px;
-    padding: 10px 10px 15px 10px;
-    width: auto;
-    height: auto;
-    margin-right: 10px;
-  }
-  .option.last {
-    margin-right: 0;
-  }
-  .options {
-    width: 223px;
-    margin: 0 auto;
-    overflow: auto;
-  }
-  .buttontrack {
+    @include linear-gradient(top, #046fd4 0%, #014c91 100%);
     clear: both;
     margin: 1em auto;
+    .button {
+      background: #efefef;
+      border: 1px solid #0e517d;
+      width: 50px;
+      height: 25px;
+      margin: -1px 0 0 -1px;
+      text-align: center;
+      padding: 5px 0 0 0;
+      cursor: pointer;
+      color: #8b8b8b;
+      font-weight: bold;
+      @include border-radius(5px);
+    }
+    .button {
+      @include box-shadow(0 2px 2px #fff inset, 0 0 10px #d7d7d7 inset, 0 0 10px #084f7d);
+    }
+    .label {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #444;
+      text-shadow: 0 2px 1px #fff;
+      font-size: 100%;
+      padding: 100px 0 0 0;
+    }
   }
   .location,
   .how-it-works img {

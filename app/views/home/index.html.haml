@@ -16,11 +16,12 @@
     %li= link_to_unless_current("Fashion", "#", :class => "fashion")
     %li= link_to_unless_current("Fresh Fish", "#", :class => "fresh-fish")
     %li= link_to_unless_current("Accessories", "#", :class => "accessories")
-  =link_to("Expand All", "#", :class => "btn")
+  =link_to("Expand All", "#", :class => "btn secondary")
 
 %section.main-content
-  = image_tag('content/bread.png', :alt => "Product name", :class => "main-img")
-  = link_to("Merchant Details", "#", :class => "hidden")
+  %div.main-img-wrapper
+    = image_tag('content/bread.png', :alt => "Product name", :class => "main-img")
+    = link_to("Merchant Details", "#", :class => "btn tertiary")
 
   = image_tag('content/user.png', :alt => "Username", :class => "user-img")
 
