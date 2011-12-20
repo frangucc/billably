@@ -12,12 +12,13 @@ gem 'sqlite3'
 # in production environments by default.
 group :assets do
   gem 'haml'
-  gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
 
 gem 'jquery-rails'
+gem 'sass'
+gem 'bourbon', '~> 1.2.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
