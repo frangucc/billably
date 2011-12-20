@@ -181,6 +181,7 @@ header.main {
   @include border-radius(3px);
   padding: 3px;
   text-align: center;
+  clear: both;
 }
 img {
   max-width: 100%;

@@ -18,6 +18,16 @@ $(document).ready(function(){
     e.preventDefault();
   });
   switch_tab($('.defaulttab'));
+
+  // Switchs
+  $.fn.changelabel = function(text){
+    $(this).children('.label').html(text);
+  }
+  $('.button').toggle(function(){
+    $(this).delay(200).animate({"marginLeft" : "49px"}, 30).changelabel("On");
+  }, function(){
+    $(this).delay(200).animate({"marginLeft" : "-1px"}, 30).changelabel("Off");
+  });
 });
 
 // Tabs

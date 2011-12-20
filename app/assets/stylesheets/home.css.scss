@@ -5,6 +5,9 @@
 @import "shared.css.scss";
 
 .home-controller {
+  .wrapper {
+    background: url("truck.png") transparent right 100px no-repeat;
+  }
   .main-img,
   .user-img,
   .merchant-info {
@@ -54,10 +57,79 @@
     font-weight: bold;
     color: #000000;
     text-align: center;
+    line-height: 40px;
   }
   form,
   .message {
     margin-bottom: 1em;
+  }
+  .get {
+    background: url("get.png") transparent left top no-repeat;
+    padding: 20px 27px 0 27px;
+  }
+  /* Switches */
+  .option.active,
+  .buttontrack {
+    width: 100px;
+    height: 30px;
+    @include border-radius(5px);
+    -webkit-box-shadow: 0 2px 6px #084f7d inset, 0 1px 1px #fff;
+    -moz-box-shadow: 0 2px 6px #084f7d inset, 0 1px 1px #fff;
+    box-shadow: 0 2px 6px #084f7d inset, 0 1px 1px #fff;
+    border: 1px solid #444;
+    background: #1f9aea;
+    overflow: hidden;
+    margin: 0;
+    color: white;
+  }
+  .option,
+  .button {
+    @include border-radius(5px);
+    background: #efefef;
+    border: 1px solid #0e517d;
+    width: 50px;
+    height: 25px;
+    margin: -1px 0 0 -1px;
+    text-align: center;
+    padding: 5px 0 0 0;
+    cursor: pointer;
+    color: #8b8b8b;
+    font-weight: bold;
+  }
+  .button {
+    -webkit-box-shadow: 0 2px 2px #fff inset, 0 0 10px #d7d7d7 inset, 0 0 10px #084f7d;
+    -moz-box-shadow: 0 2px 2px #fff inset, 0 0 10px #d7d7d7 inset, 0 0 10px #084f7d;
+    box-shadow: 0 2px 2px #fff inset, 0 0 10px #d7d7d7 inset, 0 0 10px #084f7d;
+  }
+  .label {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #444;
+    text-shadow: 0 2px 1px #fff;
+    font-size: 100%;
+    padding: 100px 0 0 0;
+  }
+  .option,
+  .option.active {
+    float: left;
+    margin: 0;
+    font-size: 24px;
+    padding: 10px 10px 15px 10px;
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+  }
+  .option.last {
+    margin-right: 0;
+  }
+  .options {
+    width: 223px;
+    margin: 0 auto;
+    overflow: auto;
+  }
+  .buttontrack {
+    clear: both;
+    margin: 1em auto;
   }
   .location,
   .how-it-works img {

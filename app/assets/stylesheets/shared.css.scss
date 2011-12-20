@@ -41,7 +41,6 @@ $main-color: #0273dc; /* blue */
   background-image: -o-linear-gradient(top, $color1, $color2);
   background-image: linear-gradient(top, $color1, $color2);
 }
-
 @mixin frame {
   @include border-radius(4px);
   background-color: #fff;

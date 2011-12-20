@@ -65,19 +65,22 @@
     %h1.hidden= "Delivery options"
     %form
       %fieldset
-        %legend= "Fresh Bread Delivered"
-        %input{:type => "radio", :name => "frequency", :value => "1", :class => "option"}
-        %input{:type => "radio", :name => "frequency", :value => "3", :class => "option"}
-        %input{:type => "radio", :name => "frequency", :value => "6", :class => "option"}
-        %input{:type => "radio", :name => "frequency", :value => "9", :class => "option"}
+        %legend.get= "Fresh Bread Delivered"
+        %div.options
+          %div.option.active="1x"
+          %div.option="3x"
+          %div.option="6x"
+          %div.option.last="9x"
       %fieldset
         %legend= "Monthly"
-        %input{:type => "checkbox", :value => "on", :class => "switch"}
-          %p.message
-            = "Get fresh bread delivered from"
-            = link_to("D'Amatos Bakery", "#")
-            = "weekly or monthly for $29.00 & up."
-            = link_to("Learn More", "#")
+        %div.buttontrack
+          %div.button
+            %span.label="Off"
+        %p.message
+          = "Get fresh bread delivered from"
+          = link_to("D'Amatos Bakery", "#")
+          = "weekly or monthly for $29.00 & up."
+          = link_to("Learn More", "#")
   %section.location
     %h1.hidden= "Location"
     = image_tag('content/map.png')
