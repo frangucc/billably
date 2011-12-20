@@ -28,6 +28,15 @@ $(document).ready(function(){
   }, function(){
     $(this).delay(200).animate({"marginLeft" : "-1px"}, 30).changelabel("Off");
   });
+
+  // City Select
+  $('#city-select').click(function(){
+    $(this).children('.available-cities').toggle();
+  });
+  $('#city-select a').click(function(e){
+    $('.current-city').html($(this).text());
+    e.preventDefault();
+  });
 });
 
 // Tabs

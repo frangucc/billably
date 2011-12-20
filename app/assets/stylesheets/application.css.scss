@@ -128,7 +128,7 @@ header h2.tagline {
 header.main {
   .logo {
     float: left;
-    padding: 10px 0;
+    padding: 10px 10px 10px 0;
   }
   ul {
     float: right;
@@ -154,16 +154,32 @@ header.main {
       }
     }
   }
-  ul.cities {
+  #city-select {
     float: left;
-    li {
-      border: 0;
-    }
-    a {
+    margin-top: 33px;
+    position: relative;
+    .current-city {
       color: #333;
       font-size: 18px;
       background: url("dropdown.png") transparent center right no-repeat;
       padding-right: 18px;
+      height: 58px;
+      line-height: 58px;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+    .available-cities {
+      display: none;
+      margin: 0;
+      position: absolute;
+      left: 0;
+      top: 56px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #E7E8E8;
+      li {
+        min-width: 120px;
+        border: 0;
+      }
     }
   }
 }

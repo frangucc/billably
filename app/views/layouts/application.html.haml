@@ -31,10 +31,12 @@
       %h1
         %a.logo{:href => "root_path", :title => "Billably"}
           = image_tag('billably.png', :alt => "Billably")
-      %ul.cities
-        %li= link_to("Chicago", "#")
-        %li.hidden= link_to("New York", "#")
-        %li.hidden= link_to("Boston", "#")
+      %div#city-select
+        %p.current-city= "Chicago"
+        %ul.available-cities
+          %li= link_to("Chicago", "#")
+          %li= link_to("New York", "#")
+          %li= link_to("Boston", "#")
 
       %nav
         %h1.hidden= "Main navigation"
