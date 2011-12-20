@@ -45,17 +45,16 @@ a {
   color: #fff;
   text-align: center;
   text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
-  @include btn-background-image(#ee432e, #c63929, #b51700, #891100);
   @include border-radius(5px);
-  @include btn-multiple-box-shadow(rgba(255, 115, 100, 0.4), #333333);
+  @include linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 51%, #891100 100%);
+  @include box-shadow(inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 1px 3px #333333);
 
   &:hover {
-    @include btn-background-image(#f37873, #db504d, #cb0500, #a20601);
-    cursor: pointer; 
+    @include linear-gradient(top, #f37873 0%, #db504d 50%, #cb0500 51%, #a20601 100%);
   }
   &:active {
-    @include btn-background-image(#d43c28, #ad3224, #9c1500, #700d00);
-    @include btn-single-box-shadow(rgba(255, 115, 100, 0.4));
+    @include linear-gradient(top, #d43c28 0%, #ad3224 50%, #9c1500 51%, #700d00 100%);
+    @include box-shadow(inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4));
   }
 }
 
@@ -69,30 +68,30 @@ a {
     padding: 0.5em 1em;
     margin-right: 1em;
     float: left;
-    @include tab-background-image(#ffffff, #ececec);
-    @include border-radius(3px);
     border: 1px solid #e6e6e6;
     border-bottom: 1px solid #bbb;
     color: #333;
     text-shadow: 0 1px 0 #eee;
     margin-bottom: 1em;
+    @include border-radius(3px);
+    @include linear-gradient(top, #ffffff, #ececec);
     &:hover {
-      @include tab-background-image(#eeeeee, #cccccc);
       border: 1px solid #bbb;
       border-bottom: 1px solid #999;
       cursor: pointer;
-      text-shadow: 0 1px 0 #ddd; 
+      text-shadow: 0 1px 0 #ddd;
+      @include linear-gradient(top, #eeeeee, #cccccc);
     }
     &:active {
       border: 1px solid #aaa;
       border-bottom: 1px solid #888;
-      @include btn-multiple-box-shadow(#aaaaaa, #eeeeee);
+      @include box-shadow(inset 0px 0px 0px 1px #aaaaaa, 0 1px 3px #eeeeee);
     }
     &.active {
-      @include tab-background-image(#6d6d6d, #4c4c4c);
       border-color: #252525;
       color: #ffffff;
       text-shadow: 0 1px 0 #000000;
+      @include linear-gradient(top, #6d6d6d, #4c4c4c);
     }
   }
   .tab-content {
@@ -195,10 +194,10 @@ header.main {
 }
 .message {
   background-color: #feffe2;
-  @include border-radius(3px);
   padding: 3px;
   text-align: center;
   clear: both;
+  @include border-radius(3px);
 }
 img {
   max-width: 100%;
