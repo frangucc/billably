@@ -122,44 +122,6 @@
       }
     }
   }
-  /* Switch */
-  .buttontrack {
-    width: 100px;
-    height: 30px;
-    border: 1px solid #444;
-    overflow: hidden;
-    margin: 0;
-    color: white;
-    @include border-radius(5px);
-    @include box-shadow(0 2px 6px #084f7d inset, 0 1px 1px #fff);
-    @include linear-gradient(top, #046fd4 0%, #014c91 100%);
-    clear: both;
-    margin: 1em auto;
-    .button {
-      background: #efefef;
-      border: 1px solid #0e517d;
-      width: 50px;
-      height: 25px;
-      margin: -1px 0 0 -1px;
-      text-align: center;
-      padding: 5px 0 0 0;
-      cursor: pointer;
-      color: #8b8b8b;
-      font-weight: bold;
-      @include border-radius(5px);
-    }
-    .button {
-      @include box-shadow(0 2px 2px #fff inset, 0 0 10px #d7d7d7 inset, 0 0 10px #084f7d);
-    }
-    .label {
-      font-weight: bold;
-      text-transform: uppercase;
-      color: #444;
-      text-shadow: 0 2px 1px #fff;
-      font-size: 100%;
-      padding: 100px 0 0 0;
-    }
-  }
   .location,
   .how-it-works img {
     @include frame;
