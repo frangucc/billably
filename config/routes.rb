@@ -1,4 +1,8 @@
 Billably::Application.routes.draw do
+  get "categories/index"
+
+  get "categories/show"
+
   get "home/index"
 
   # The priority is based upon order of creation:
