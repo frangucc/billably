@@ -1,0 +1,19 @@
+%section.left-sidebar
+  %h1.hidden= "Secondary navigation"
+  %ul
+    %li= link_to_unless_current("Magazines", "#", :class => "magazines")
+    %li= link_to_unless_current("Shoes", "#", :class => "shoes")
+    %li= link_to_unless_current("Fruits", "#", :class=> "fruits")
+    %li= link_to_unless_current("Organic", "#", :class => "organic")
+    %li= link_to_unless_current("Wine", "#", :class => "wine")
+    %li= link_to_unless_current("Microbrew", "#", :class => "microbrew")
+    %li= link_to_unless_current("Farmers Market", "#", :class => "farmers-market")
+    %li= link_to_unless_current("Nutrition", "#", :class => "nutrition")
+    %li= link_to_unless_current("Education", "#", :class => "education")
+    %li= link_to_unless_current("Health", "#", :class => "health")
+    %li= link_to_unless_current("Beauty", "#", :class => "beauty")
+    %li= link_to_unless_current("Fragrance", "#", :class => "fragrance")
+    %li= link_to_unless_current("Fashion", "#", :class => "fashion")
+    %li= link_to_unless_current("Fresh Fish", "#", :class => "fresh-fish")
+    %li= link_to_unless_current("Accessories", "#", :class => "accessories")
+  =link_to("Expand All", "#", :class => "btn secondary")
