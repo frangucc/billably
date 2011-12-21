@@ -1,9 +1,5 @@
 Billably::Application.routes.draw do
-  get "categories/index"
-
-  get "categories/show"
-
-  get "home/index"
+  resources :categories, :only => [:index, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
