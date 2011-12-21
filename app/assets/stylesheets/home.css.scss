@@ -5,6 +5,18 @@
 @import "shared.css.scss";
 
 .home-controller {
+  /* home layout: 20 + 2 + 47 + 2 + 29 */
+  .left-sidebar {
+    margin-right: 2%;
+  }
+  .main-content {
+    width: 47%;
+    float:left;
+  }
+  .right-sidebar {
+    float: right;
+    width: 29%;
+  }
   .wrapper {
     background: url("truck.png") transparent right 100px no-repeat;
   }

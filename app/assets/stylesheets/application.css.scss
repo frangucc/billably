@@ -235,19 +235,17 @@ img {
   margin-bottom: 1em;
 }
 
-/* layout */ /* 16 + 2 + 50 + 2 + 30 */
-.left-sidebar,
-.main-content,
-.right-sidebar {
-  float: left;
+/* global layout: 16 + 2 + 82 */
+.main-content {
+  width: 78%;
+  float: right;
 }
-
 .left-sidebar {
   width: 16%;
-  margin-right: 2%;
+  float: left;
   background-color: #fff;
   border: 1px solid #d6e5e8;
-  padding: 2%;
+  padding: 2%; 
 
   ul {
     margin-bottom: 11px;
@@ -255,7 +253,7 @@ img {
   li a {
     color: #333;
     display: block;
-    line-height: 30px; 
+    line-height: 30px;
     background: url("icons-sprite.png") transparent center left no-repeat;
     padding-left: 30px;
     &.magazines {background-position: 0 4px;}
@@ -274,13 +272,6 @@ img {
     &.fresh-fish {background-position: 0 -404px;}
     &.accessories {background-position: 0 -436px;}
   }
-}
-.main-content {
-  width: 47%;
-}
-.right-sidebar {
-  float: right;
-  width: 29%;
 }
 
 /* footer */

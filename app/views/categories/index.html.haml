@@ -1,4 +1,126 @@
 = render :partial => 'shared/sidebar'
 
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+%section.main-content
+  %div.main-img-wrapper
+    %h1= "Magazine Subscriptions"
+    = image_tag('content/magazine-subscriptions.png', :alt => "Magazine Subscriptions", :class => "main-img")
+    = link_to("Join a magazine club and join the conversation", "#")
+
+  %h2= "Monthly Magazine Subscription Packages"
+  %ul.combos
+    %li
+      %div.combo-id= "1"
+      = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
+      %div.buttontrack
+        %div.button
+          %span.label="Off"
+      = link_to("Subscription Details", "#")
+      = image_tag('content/magazines/outdoor-combo.png', :alt => "Outdoor combo")
+      %h1= link_to("Field and Outdoor Combo", "#")
+      %ul
+        %li= "$4.99 Monthly"
+        %li= "329 Members"
+
+    %li
+      %div.combo-id= "1"
+      = image_tag('content/magazines/business.png', :alt => "Business combo")
+      %div.buttontrack
+        %div.button
+          %span.label="Off"
+      = link_to("Subscription Details", "#")
+      = image_tag('content/magazines/business-combo.png', :alt => "Business combo")
+      %h1= link_to("Business Combo", "#")
+      %ul
+        %li= "$4.99 Monthly"
+        %li= "329 Members"
+
+    %li
+      %div.combo-id= "1"
+      = image_tag('content/magazines/photography.png', :alt => "Photography combo")
+      %div.buttontrack
+        %div.button
+          %span.label="Off"
+      = link_to("Subscription Details", "#")
+      = image_tag('content/magazines/photography-combo.png', :alt => "Photography combo")
+      %h1= link_to("Photography Combo", "#")
+      %ul
+        %li= "$4.99 Monthly"
+        %li= "121 Members"
+
+  %section.most-subscribed
+    %h1= "Most Subscribed"
+    %ul
+      %li
+        = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
+        %h1= link_to("Field and Outdoor Combo", "#")
+        %div.buttontrack
+          %div.button
+            %span.label="Off"
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+        = link_to("Subscription Details", "#")
+      %li
+        = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
+        %h1= link_to("Field and Outdoor Combo", "#")
+        %div.buttontrack
+          %div.button
+            %span.label="Off"
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+        = link_to("Subscription Details", "#")
+      %li
+        = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
+        %h1= link_to("Field and Outdoor Combo", "#")
+        %div.buttontrack
+          %div.button
+            %span.label="Off"
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+        = link_to("Subscription Details", "#")
+
+  %section.all-subscriptions
+    %ul
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul
+          %li= "$4.99 Monthly"
+          %li= "329 Members"
+
