@@ -1,0 +1,15 @@
+%p= link_to "New #{resource_class}", new_resource_url
+- unless collection.any?
+  %p This is empty
+- else
+  %table{:class => "image"}
+    - collection.each do |record|
+      %tr
+        %td= image_tag(record.attachment.url)
+        %td= record.updated_at.to_s(:short)
+        %td= record.created_at.to_s(:short)
+        %td
+          = link_to "Show", resource_url(record)
+          = link_to "Edit", edit_resource_url(record)
+          = link_to "Delete", resource_url(record), :confirm => "Are you sure you want to delete it?", :method => :delete
+

@@ -1,0 +1,27 @@
+!!! 5
+%html
+  %head
+    %title Realvolve
+    = stylesheet_link_tag "application"
+    = csrf_meta_tags
+  %body
+    #header
+      #nav
+        %ul
+          - if current_user
+            %li= current_user.username
+            %li= link_to "Sign Out", destroy_user_session_path
+          - else
+            %li= link_to "Sign In", new_user_session_path
+
+      - unless current_user
+        = render :partial => 'shared/omniauth_providers'
+      #flash
+        - flash.each do |key, value|
+          .message{ :class => key }
+            %p= value
+    #main
+      = yield
+    #footer
+      = javascript_include_tag "application"
+

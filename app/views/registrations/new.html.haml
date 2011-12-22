@@ -1,0 +1,14 @@
+%h2 Sign up
+= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  .inputs
+    - unless session[:omniauth] && session[:omniauth]["info"]["email"]
+      = f.input :email, :required => true, :autofocus => true
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :zipcode,     :required => true
+    - unless session[:omniauth]
+      = f.input :password, :required => true
+      = f.input :password_confirmation, :required => true
+  .actions
+    = f.submit "Sign up"
+= render :partial => "devise/shared/links"
