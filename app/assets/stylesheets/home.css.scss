@@ -42,9 +42,11 @@
     margin-bottom: 1em;
     .btn {
       position: absolute;
-      bottom: 30px;
-      right: 21px;
+      bottom: 11px;
+      right: 6px;
       width: 10em;
+      border:12px solid #fff;
+      @include box-shadow(inset 0px 0px -3px -3px #000, 0 -2px -8px #000);
     }
   }
   .main-img {
@@ -71,7 +73,8 @@
     font-weight: bold;
     color: #000000;
     text-align: center;
-    line-height: 40px;
+    line-height: 30px;
+    padding-bottom:.3em;
   }
   form,
   .message {
@@ -79,7 +82,8 @@
   }
   .get {
     background: url("get.png") transparent left top no-repeat;
-    padding: 20px 27px 0 27px;
+    padding: 20px 27px 20px 27px;
+    margin:0 0 0 30px;
   }
   /* Options */
   .options {
