@@ -9,7 +9,7 @@
   %title= "Billably"
   %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1; charset=utf-8"}
   %meta{"charset" => "utf-8"}
-  %meta{ :content => "Manage all your subscriptions in one place", :name => "description"}
+  %meta{ :content => "All your subscriptions in one place", :name => "description"}
   %meta{ :content => "Francesco Pinto, Vero Rebagliatte", :name => "author" }
   = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Lobster"
   = csrf_meta_tag
@@ -45,7 +45,7 @@
           %li= link_to_unless_current("Sign Up", "#")
           %li= link_to_unless_current("Login", "#")
           %li.last= link_to_unless_current("Offer a subscription", "#", :class => "btn")
-      %h2.tagline= "Manage all your subscriptions in one place"
+      %h2.tagline= "All your subscriptions in one great place"
 
     %section.main
       = yield

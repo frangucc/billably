@@ -42,13 +42,13 @@ a {
   display: block;
   padding: 0.5em;
   font-weight: bold;
-  border: 1px solid #951100;
+  border: 0px solid #951100;
   color: #fff;
   text-align: center;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
   @include border-radius(5px);
   @include linear-gradient(top, #ff69a6 0%, #ff2c83 50%, #f50166 51%, #f4074b 100%);
-  @include box-shadow(inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 1px 3px #333333);
+  @include box-shadow(inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 0px 0px #333333);
   &:hover {
     @include linear-gradient(top, #ffa6ca 0%, #fc4a93 50%, #f50166 51%, #f4074b 100%);
   }
@@ -72,7 +72,7 @@ a {
   }
 
   &.tertiary {
-    @include linear-gradient(top, #bade87 0%, #96d35e 50%, #77be37 51%, #6cb937 100%);
+    @include linear-gradient(top, #7ec742 0%, #84cc4a 50%, #84cc4a 51%, #589b20 100%);
     border-color: #366301;
     color: #143000;
     text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.8);
@@ -94,7 +94,7 @@ a {
   overflow: auto;
   ul.tab li a {
     padding: 0.5em 1em;
-    margin-right: 1em;
+    margin-right: .4em;
     float: left;
     border: 1px solid #e6e6e6;
     border-bottom: 1px solid #bbb;
@@ -114,13 +114,16 @@ a {
       border: 1px solid #aaa;
       border-bottom: 1px solid #888;
       @include box-shadow(inset 0px 0px 0px 1px #aaaaaa, 0 1px 3px #eeeeee);
+       @include linear-gradient(top, #046fd4 0%, #014c91 100%);
     }
     &.active {
       border-color: #252525;
       color: #ffffff;
       text-shadow: 0 1px 0 #000000;
       @include linear-gradient(top, #6d6d6d, #4c4c4c);
+       @include linear-gradient(top, #046fd4 0%, #014c91 100%);
     }
+    
   }
   .tab-content {
     clear: both;
@@ -143,6 +146,10 @@ a {
   @include linear-gradient(top, #046fd4 0%, #014c91 100%);
   clear: both;
   margin: 1em auto;
+  &.large {
+    width: 130px;
+    height: 50px;
+  }
   .button {
     background: #efefef;
     border: 1px solid #0e517d;
@@ -155,6 +162,11 @@ a {
     color: #8b8b8b;
     font-weight: bold;
     @include border-radius(5px);
+    &.large{
+      width: 80px;
+      height: 45px;
+      padding: 15px 0 0 0;
+    }
   }
   .button {
     @include box-shadow(0 2px 2px #fff inset, 0 0 10px #d7d7d7 inset, 0 0 10px #084f7d);
@@ -166,6 +178,9 @@ a {
     text-shadow: 0 2px 1px #fff;
     font-size: 100%;
     padding: 100px 0 0 0;
+    &.large {
+      font-size: 180%;
+    }
   }
 }
 
@@ -241,7 +256,7 @@ header.main {
       position: absolute;
       left: 0;
       top: 56px;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 1.0);
       border: 1px solid #E7E8E8;
       li {
         min-width: 120px;
