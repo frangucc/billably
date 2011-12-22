@@ -1,0 +1,90 @@
+%section.main-content
+  %h1= "Create an account"
+  %form
+    %fieldset
+      %legend= "Personal Information"
+      %div.field
+        %label= "Full Name"
+        %input
+      %div.field
+        %label= "Email"
+        %input
+      %div.field
+        %label= "Password"
+        %input
+      %div.field
+        %label= "Password confirm"
+        %input
+    %fieldset
+      %legend= "Billing Information"
+      %div.left-column
+        %div.field
+          %label= "Cardholder Name"
+          %input
+        %div.field
+          %label= "Card Number"
+          %input
+        %div.field
+          %label= "Security Code"
+          %input
+        %div.field
+          %label= "Expiration Date"
+          %input
+      %div.right-column
+        %div.field
+          %label= "Billing Address"
+          %input
+        %div.field
+          %label= "City"
+          %input
+        %div.field
+          %label= "State/Province"
+          %input
+        %div.field
+          %label= "Postal Code"
+          %input
+      %div.field.terms
+        %input{ :type => "checkbox" }
+          %label
+            = "I agree to the"
+            = link_to("Terms and Conditions", "#")
+            = "and"
+            = link_to("Privacy Statement", "#")
+      %input{ :type => "Submit", :value => "Create an account"}
+
+%section.right-sidebar
+  %h1= "Payment FAQ"
+  %ul
+    %li
+      %h2= link_to("What", "#")
+      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+    %li
+      %h2= link_to("What", "#")
+      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+    %li
+      %h2= link_to("What", "#")
+      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+    %li
+      %h2= link_to("What", "#")
+      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+    %li
+      %h2= link_to("What", "#")
+      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+    %li
+      %h2= link_to("What", "#")
+      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+    %li
+      %h2= link_to("What", "#")
+      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+    %li
+      %h2= link_to("What", "#")
+      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+    %li
+      %h2= link_to("What", "#")
+      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+    %li
+      %h2= link_to("What", "#")
+      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+
+
+

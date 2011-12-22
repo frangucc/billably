@@ -2,6 +2,9 @@ Billably::Application.routes.draw do
   resources :categories, :only => [:index, :show]
   resources :clubs, :only => [:index, :show]
 
+  #TODO: Remove this after the payments controller is created
+  match 'payments' => 'home#payments'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
