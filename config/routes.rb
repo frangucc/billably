@@ -1,9 +1,6 @@
 Billably::Application.routes.draw do
-  get "clubs/index"
-
-  get "clubs/show"
-
   resources :categories, :only => [:index, :show]
+  resources :clubs, :only => [:index, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
