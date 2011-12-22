@@ -132,7 +132,7 @@ a {
 }
 /* Switch */
 .buttontrack {
-  width: 100px;
+  width: 76px;
   height: 30px;
   border: 1px solid #444;
   overflow: hidden;
@@ -146,7 +146,7 @@ a {
   .button {
     background: #efefef;
     border: 1px solid #0e517d;
-    width: 50px;
+    width: 38px;
     height: 25px;
     margin: -1px 0 0 -1px;
     text-align: center;
@@ -274,6 +274,18 @@ img {
   margin-bottom: 1em;
   font-size: 14px;
 }
+.clearfix {
+  clear: both;
+}
+ul.details li {
+  float: left;
+  padding-right: 3px;
+  color: #757575;
+  font-size: 12px;
+  &.last::before {
+    content: " | ";
+  }
+}
 
 /* global layout: 16 + 2 + 82 */
 .main-content {
@@ -320,6 +332,8 @@ img {
 footer {
   clear: both;
   font-size: 12px;
+  padding-top: 3em;
+  border-top: 1px solid #d9d9d9;
   li {
     float: left;
     margin-right: 1em;
@@ -363,6 +377,7 @@ footer {
   .categories-controller .combo li {
     float: none;
   }
+
 }
 @media screen and (max-width: 900px) { 
   .wrapper {

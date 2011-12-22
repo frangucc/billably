@@ -19,9 +19,9 @@
         = link_to("Subscription Details", "#", :class => "btn secondary")
       = image_tag('content/magazines/outdoor-combo.png', :alt => "Outdoor combo", :class => "combo-img")
       %h1= link_to("Outdoor Combo", "#")
-      %ul
+      %ul.details
         %li= "$4.99 Monthly"
-        %li= "329 Members"
+        %li.last= "329 Members"
 
     %li.combo
       %div.combo-id= "2"
@@ -34,9 +34,9 @@
         = link_to("Subscription Details", "#", :class => "btn secondary")
       = image_tag('content/magazines/business-combo.png', :alt => "Business combo", :class => "combo-img")
       %h1= link_to("Business Combo", "#")
-      %ul
+      %ul.details
         %li= "$4.99 Monthly"
-        %li= "329 Members"
+        %li.last= "329 Members"
 
     %li.combo.last
       %div.combo-id= "3"
@@ -49,85 +49,79 @@
         = link_to("Subscription Details", "#", :class => "btn secondary")
       = image_tag('content/magazines/photography-combo.png', :alt => "Photography combo", :class => "combo-img")
       %h1= link_to("Photography Combo", "#")
-      %ul
+      %ul.details
         %li= "$4.99 Monthly"
-        %li= "121 Members"
+        %li.last= "121 Members"
+  %div.clearfix
 
   %section.most-subscribed
     %h1.secondary-heading= "Most Subscribed"
-    %ul
-      %li
+    %ul.subscription-list
+      %li.subscription
         = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
-        %h1= link_to("Field and Outdoor Combo", "#")
+        %div.info
+          %h1= link_to("Field and Outdoor Combo", "#")
+          %ul.details
+            %li= "$4.99 Monthly"
+            %li.last= "329 Members"
+          = link_to("Subscription Details", "#", :class => "btn secondary")
         %div.buttontrack
           %div.button
             %span.label="Off"
-        %ul
-          %li= "$4.99 Monthly"
-          %li= "329 Members"
-        = link_to("Subscription Details", "#")
-      %li
+      %li.subscription
         = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
-        %h1= link_to("Field and Outdoor Combo", "#")
+        %div.info
+          %h1= link_to("Field and Outdoor Combo", "#")
+          %ul.details
+            %li= "$4.99 Monthly"
+            %li.last= "329 Members"
+          = link_to("Subscription Details", "#", :class => "btn secondary")
         %div.buttontrack
           %div.button
             %span.label="Off"
-        %ul
-          %li= "$4.99 Monthly"
-          %li= "329 Members"
-        = link_to("Subscription Details", "#")
-      %li
+      %li.subscription.last
         = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
-        %h1= link_to("Field and Outdoor Combo", "#")
+        %div.info
+          %h1= link_to("Field and Outdoor Combo", "#")
+          %ul.details
+            %li= "$4.99 Monthly"
+            %li.last= "329 Members"
+          = link_to("Subscription Details", "#", :class => "btn secondary")
         %div.buttontrack
           %div.button
             %span.label="Off"
-        %ul
-          %li= "$4.99 Monthly"
-          %li= "329 Members"
-        = link_to("Subscription Details", "#")
 
   %section.all-subscriptions
     %h1.secondary-heading= "All Magazine Subscriptions"
     %ul
+      %li.first
+        = link_to("Womens Fashion", "#")
+        %ul.details
+          %li= "$4.99 Monthly"
+          %li.last= "329 Members"
       %li
         = link_to("Womens Fashion", "#")
-        %ul
+        %ul.details
           %li= "$4.99 Monthly"
-          %li= "329 Members"
+          %li.last= "329 Members"
       %li
         = link_to("Womens Fashion", "#")
-        %ul
+        %ul.details
           %li= "$4.99 Monthly"
-          %li= "329 Members"
+          %li.last= "329 Members"
       %li
         = link_to("Womens Fashion", "#")
-        %ul
+        %ul.details
           %li= "$4.99 Monthly"
-          %li= "329 Members"
+          %li.last= "329 Members"
       %li
         = link_to("Womens Fashion", "#")
-        %ul
+        %ul.details
           %li= "$4.99 Monthly"
-          %li= "329 Members"
+          %li.last= "329 Members"
       %li
         = link_to("Womens Fashion", "#")
-        %ul
+        %ul.details
           %li= "$4.99 Monthly"
-          %li= "329 Members"
-      %li
-        = link_to("Womens Fashion", "#")
-        %ul
-          %li= "$4.99 Monthly"
-          %li= "329 Members"
-      %li
-        = link_to("Womens Fashion", "#")
-        %ul
-          %li= "$4.99 Monthly"
-          %li= "329 Members"
-      %li
-        = link_to("Womens Fashion", "#")
-        %ul
-          %li= "$4.99 Monthly"
-          %li= "329 Members"
+          %li.last= "329 Members"
 

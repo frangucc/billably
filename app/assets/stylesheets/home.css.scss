@@ -31,15 +31,6 @@
       margin-bottom: 1em;
       display: inline;
     }
-    li {
-      float: left;
-      padding-right: 3px;
-      color: #757575;
-      font-size: 12px;
-      &.last::before {
-        content: " | ";
-      }
-    }
     img {
       float: right;
       padding: 0 20px;

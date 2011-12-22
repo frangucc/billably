@@ -49,6 +49,7 @@
     float: left;
     border: 1px solid #dedede;
     position: relative;
+    margin-bottom: 2em;
     &.first {
       margin-left: 0;
     }
@@ -81,7 +82,7 @@
     }
     .buttontrack-wrapper {
       top: 0;
-      width: 131px;
+      width: 107px;
       padding: 16px 0px 0.5em 0;
       .buttontrack {
         float: right;
@@ -91,18 +92,71 @@
     .combo-img {
       float: right;
     }
-    li {
-      color: #878787;
-      float: left;
-      font-size: 12px;
-      margin-right: 1em;
-    }
     h1 {
       padding-top: 10px;
     }
   }
-  .most-subscribed {
+  .most-subscribed,
+  .all-subscriptions {
+    width: 58%;
+    float: left;
+    h1.secondary-heading {
+      border-bottom: 1px solid #d9d9d9;
+      padding-bottom: 1em;
+      margin-bottom: 0;
+    }
+  }
+  .subscription-list {
+    border-right: 1px solid #d9d9d9;
+    padding: 2em 2em 2em 0;
+  }
+  .subscription {
     clear: both;
+    overflow: auto;
+    margin-bottom: 2em;
+    position: relative;
+    padding-right: 103px;
+    &.last {
+      margin-bottom: 0;
+    }
+    img {
+      float: left;
+      width: 23%;
+    }
+    .info {
+      float: right;
+      width: 70%;
+    }
+    .btn {
+      font-size: 12px;
+      clear: both;
+      width: 10em;
+    }
+    .buttontrack {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      float: right;
+    }
+  }
+  .all-subscriptions {
+    width: 42%;
+    li {
+      clear: both;
+      overflow: auto;
+      margin-left: 2em;
+      &.first {
+        margin-top: 2em;
+      }
+      a {
+        font-weight: bold;
+      }
+      li {
+        clear: none;
+        margin: 0;
+      }
+    }
   }
 }
 

@@ -30,7 +30,7 @@ $(document).ready(function(){
     $(this).children('.label').html(text);
   }
   $('.button').toggle(function(){
-    $(this).delay(200).animate({"marginLeft" : "49px"}, 30).changelabel("On");
+    $(this).delay(200).animate({"marginLeft" : "37px"}, 30).changelabel("On");
   }, function(){
     $(this).delay(200).animate({"marginLeft" : "-1px"}, 30).changelabel("Off");
   });
