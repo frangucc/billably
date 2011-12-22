@@ -32,9 +32,8 @@
       color: #dedede;
       text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
       padding: 1em;
-      border: 1px solid #ccc;
+      border: 0px solid #ccc;
       @include border-radius(5px);
-      @include box-shadow(0 1px 3px #333333);
       background: rgba(0, 0, 0, 0.8) url("join-the-conversation.png") 195px center no-repeat;
       padding-right: 55px;
       text-align: right;

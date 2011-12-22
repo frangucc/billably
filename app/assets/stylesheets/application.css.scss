@@ -94,7 +94,7 @@ a {
   overflow: auto;
   ul.tab li a {
     padding: 0.5em 1em;
-    margin-right: 1em;
+    margin-right: .4em;
     float: left;
     border: 1px solid #e6e6e6;
     border-bottom: 1px solid #bbb;
@@ -114,13 +114,16 @@ a {
       border: 1px solid #aaa;
       border-bottom: 1px solid #888;
       @include box-shadow(inset 0px 0px 0px 1px #aaaaaa, 0 1px 3px #eeeeee);
+       @include linear-gradient(top, #046fd4 0%, #014c91 100%);
     }
     &.active {
       border-color: #252525;
       color: #ffffff;
       text-shadow: 0 1px 0 #000000;
       @include linear-gradient(top, #6d6d6d, #4c4c4c);
+       @include linear-gradient(top, #046fd4 0%, #014c91 100%);
     }
+    
   }
   .tab-content {
     clear: both;
