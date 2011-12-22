@@ -1,0 +1,69 @@
+= render :partial => 'shared/sidebar'
+
+%section.main-content
+  %div.main-img-wrapper
+    %h1= "Clubs Subscriptions"
+    = image_tag('content/clubs/main-highlight.png', :alt => "Wine Country. Join a Napa or Sanoma County Wine Club", :class => "main-img")
+
+  %h2.secondary-heading= "Discover the wonderful enjoyment of monthly products clubs ..."
+  %ul
+    %li.subscription.first
+      %div.combo-id= "1"
+      = image_tag('content/clubs/cheese.png', :alt => "Fine Cheese")
+      %div.btn-wrapper
+        = link_to("Subscription Details", "#", :class => "btn secondary")
+      %h1.emphasized= link_to("Fine Cheese", "#")
+      %ul.details
+        %li= "$4.99 Monthly"
+        %li.last= "329 Members"
+
+    %li.subscription
+      %div.combo-id= "2"
+      = image_tag('content/clubs/fruits.png', :alt => "Exotic Fruits")
+      %div.btn-wrapper
+        = link_to("Subscription Details", "#", :class => "btn secondary")
+      %h1.emphasized= link_to("Exotic Fruits", "#")
+      %ul.details
+        %li= "$4.99 Monthly"
+        %li.last= "329 Members"
+
+    %li.subscription.last
+      %div.combo-id= "3"
+      = image_tag('content/clubs/microbrews.png', :alt => "Microbrew")
+      %div.btn-wrapper
+        = link_to("Subscription Details", "#", :class => "btn secondary")
+      %h1.emphasized= link_to("Microbrew", "#")
+      %ul.details
+        %li= "$4.99 Monthly"
+        %li.last= "329 Members"
+
+    %li.subscription.first
+      %div.combo-id= "4"
+      = image_tag('content/clubs/men.png', :alt => "Mens Needs")
+      %div.btn-wrapper
+        = link_to("Subscription Details", "#", :class => "btn secondary")
+      %h1.emphasized= link_to("Mens Needs", "#")
+      %ul.details
+        %li= "$4.99 Monthly"
+        %li.last= "329 Members"
+
+    %li.subscription
+      %div.combo-id= "5"
+      = image_tag('content/clubs/women.png', :alt => "Womens Fashion")
+      %div.btn-wrapper
+        = link_to("Subscription Details", "#", :class => "btn secondary")
+      %h1.emphasized= link_to("Womens Fashion", "#")
+      %ul.details
+        %li= "$4.99 Monthly"
+        %li.last= "329 Members"
+
+    %li.subscription.last
+      %div.combo-id= "6"
+      = image_tag('content/clubs/children.png', :alt => "Children")
+      %div.btn-wrapper
+        = link_to("Subscription Details", "#", :class => "btn secondary")
+      %h1.emphasized= link_to("Children", "#")
+      %ul.details
+        %li= "$4.99 Monthly"
+        %li.last= "329 Members"
+
