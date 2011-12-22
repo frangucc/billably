@@ -40,7 +40,7 @@ a {
 /* Buttons */
 .btn {
   display: block;
-  padding: 10px;
+  padding: 0.5em;
   font-weight: bold;
   border: 1px solid #951100;
   color: #fff;
@@ -270,8 +270,9 @@ img {
   max-width: 100%;
 }
 .secondary-heading {
-  color: $main-color;
+  color: #333333;
   margin-bottom: 1em;
+  font-size: 14px;
 }
 
 /* global layout: 16 + 2 + 82 */
@@ -350,6 +351,17 @@ footer {
 @media screen and (max-width: 1250px) { 
   .wrapper {
     width: 90%;
+  }
+  .categories-controller .combo .btn-wrapper {
+    position: static;
+    width: 100%;
+    padding: 0 0 1em 0;
+  }
+  .categories-controller .combo h1 {
+    padding-top: 0;
+  }
+  .categories-controller .combo li {
+    float: none;
   }
 }
 @media screen and (max-width: 900px) { 

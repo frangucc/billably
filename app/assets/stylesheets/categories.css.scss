@@ -7,6 +7,7 @@
 .categories-controller {
   .main-img-wrapper {
     position: relative;
+    margin-bottom: 1em;
     h1 {
       position: absolute;
       top: 0;
@@ -27,7 +28,8 @@
       position: absolute;
       right: 20px;
       bottom: 20px;
-      color: #c3c3c3;
+      color: #dedede;
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
       padding: 1em;
       border: 1px solid #ccc;
       @include border-radius(5px);
@@ -35,6 +37,75 @@
       background: rgba(0, 0, 0, 0.8) url("join-the-conversation.png") 195px center no-repeat;
       padding-right: 55px;
       text-align: right;
+      &:hover {
+        color: white;
+      }
     }
   }
+  .combo {
+    width: 28%;
+    padding: 2%;
+    margin-left: 2%;
+    float: left;
+    border: 1px solid #dedede;
+    position: relative;
+    &.first {
+      margin-left: 0;
+    }
+    &.last {
+      float: right;
+      margin: 0;
+    }
+    .combo-id {
+      position: absolute;
+      top: 2%;
+      left: 6%;
+      background-color: #fff;
+      width: 2em;
+      height: 2em;
+      text-align: center;
+      line-height: 2em;
+      color: #858585;
+    }
+    .btn-wrapper,
+    .buttontrack-wrapper {
+      position: absolute;
+      top: 145px;
+      right: 0;
+      width: 10em;
+      background: #fff;
+      padding: 0.7em 9% 0.5em 0.7em;
+      .btn {
+        font-size: 12px;
+      }
+    }
+    .buttontrack-wrapper {
+      top: 0;
+      width: 131px;
+      padding: 16px 0px 0.5em 0;
+      .buttontrack {
+        float: right;
+        margin: 0 21px 0 0;
+      }
+    }
+    .combo-img {
+      float: right;
+    }
+    li {
+      color: #878787;
+      float: left;
+      font-size: 12px;
+      margin-right: 1em;
+    }
+    h1 {
+      padding-top: 10px;
+    }
+  }
+  .most-subscribed {
+    clear: both;
+  }
 }
+
+
+
+
