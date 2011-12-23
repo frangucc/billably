@@ -21,6 +21,13 @@
     background: url("header_bg.png") #fff top left repeat-x;
     width: 66%;
     float: left;
+    position: relative;
+    .fb {
+      position: absolute;
+      top: 0;
+      right: 0;
+      line-height: 30px;
+    }
   }
   .right-sidebar {
     width: 24%;
@@ -91,8 +98,5 @@
     width: 20em;
     font-size: 14px;
   }
-
-
-
 }
 
