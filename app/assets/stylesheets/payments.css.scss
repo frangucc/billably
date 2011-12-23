@@ -33,6 +33,12 @@
   }
   fieldset {
     padding-top: 1em;
+    margin-bottom: 1em;
+    .left-column,
+    .right-column {
+      float: left;
+      width: 50%;
+    }
   }
   legend {
     font-size: 15px;
@@ -52,7 +58,7 @@
   .required label {
     font-weight: bold;
   }
-  input,
+  .field input,
   textarea {
     border: 1px solid #dedede;
     padding: 0.9em;
@@ -67,6 +73,23 @@
   input:focus,
   textarea:focus {
     border-color: #26A9E0;
+  }
+  .field.terms {
+    overflow: auto;
+    input {
+      width: 20px;
+      margin-top: 5px;
+      float: left;
+    }
+    label {
+      float: left;
+      line-height: 20px;
+    }
+  }
+  input.btn {
+    clear: both;
+    width: 20em;
+    font-size: 14px;
   }
 
 

@@ -3,18 +3,20 @@
   %form
     %fieldset
       %legend= "Personal Information"
-      %div.field
-        %label= "Full Name"
-        %input
-      %div.field
-        %label= "Email"
-        %input
-      %div.field
-        %label= "Password"
-        %input
-      %div.field
-        %label= "Password confirm"
-        %input
+      %div.left-column
+        %div.field
+          %label= "Full Name"
+          %input
+        %div.field
+          %label= "Password"
+          %input
+      %div.right-column
+        %div.field
+          %label= "Email"
+          %input
+        %div.field
+          %label= "Password confirm"
+          %input
     %fieldset
       %legend= "Billing Information"
       %div.left-column
@@ -50,7 +52,7 @@
             = link_to("Terms and Conditions", "#")
             = "and"
             = link_to("Privacy Statement", "#")
-      %input{ :type => "Submit", :value => "Create an account"}
+    %input{ :type => "Submit", :value => "Create an account", :class => "btn"}
 
 %section.right-sidebar
   %h1.main= "Payment FAQ"
