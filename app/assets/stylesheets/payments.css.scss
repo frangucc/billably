@@ -1,0 +1,22 @@
+@import "shared.css.scss";
+
+.payments-controller {
+  .main-content,
+  .right-sidebar {
+    border: 1px solid #c5d1d3;
+    @include border-radius(5px);
+    background-color: #fff;
+    margin-bottom: 2em;
+    @include box-shadow(inset 0px 0px 4px 2px rgba(241, 241, 241, 0.9), 0 0px 0px #333333);
+  }
+  .main-content {
+    width: 66%;
+    padding: 2%;
+  }
+  .right-sidebar {
+    width: 24%;
+    padding: 2%;
+  }
+
+}
+
