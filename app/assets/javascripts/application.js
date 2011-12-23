@@ -52,5 +52,5 @@ function switch_tab(obj){
   var id = obj.attr("rel");
 
   $('#'+id).show();
-  obj.addClass("active"); 
+  obj.addClass("active");
 }

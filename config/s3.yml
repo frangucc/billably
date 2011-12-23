@@ -1,0 +1,24 @@
+keys: &KEYS
+  access_key_id: 1G9QA0G3K1FK0DR8G6R2
+  secret_access_key: LF710eTL+noH02vZinMbXJr85PPDyyscCFHHhcDx
+  max_file_size: 1048576000
+
+development:
+  <<: *KEYS
+  bucket: billably-development
+  acl: public-read
+
+production:
+  <<: *KEYS
+  bucket: billably-production
+  acl: public-read
+
+staging:
+  <<: *KEYS
+  bucket: billably-staging
+  acl: public-read
+
+test:
+  <<: *KEYS
+  bucket: billably-test
+  acl: public-read

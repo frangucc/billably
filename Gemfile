@@ -1,35 +1,64 @@
-source 'http://rubygems.org'
+source :rubygems
 
-gem 'rails', '3.1.0'
+gem 'aws-s3'
+gem 'bourbon', '~> 1.2.0'
+gem 'capistrano'
+gem 'capistrano-ext'
+gem 'carrierwave'
+gem 'carrierwave_direct'
+gem 'concerned_with'
+gem 'devise'
+gem 'devise_invitable'
+gem 'execjs'
+gem 'therubyracer'
+gem 'file-tail'
+gem 'fog'
+gem 'formtastic'
+gem 'haml'
+gem 'inherited_resources'
+gem 'jquery-rails'
+gem 'mini_magick'
+gem 'mysql2'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-identity'
+gem 'omniauth-linkedin'
+gem 'omniauth-twitter'
+gem 'passenger'
+gem 'plupload-rails'
+gem 'rails', '3.1.3'
+gem 'rake'
+gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git'
+gem 'sass-rails'
+gem 'schedule_atts'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
-
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'haml'
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
-gem 'sass-rails'
-gem 'bourbon', '~> 1.2.0'
+group :development, :test do
+  gem 'autotest'
+  gem 'capybara'
+  gem 'faker'
+  gem 'factory_girl_rails'
+  gem 'heroku'
+  gem 'rak'
+  gem 'ruby-debug19'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'sqlite3'
+  gem 'timecop', '0.3.5'
+end
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :production do
+  gem 'pg'
+  gem 'seo_meta', :git => 'git://github.com/parndt/seo_meta.git'
+# gem 'therubyracer-heroku'
+end
 
 group :test do
-  # Pretty printed test output
   gem 'turn', :require => false
 end

@@ -1,12 +1,40 @@
-# Ignore bundler config
-/.bundle
-
-# Ignore the default SQLite database.
-/db/*.sqlite3
-
-# Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
-
-# Ignore system generated images
-public/system/
+*.autobackupbyrefinery.*
+*.log
+*.rbc
+*.swo
+*.swo
+*.swp
+*.swp
+*.tmproj
+*~
+.DS_Store
+.bundle
+.bundle
+.eprj
+.idea
+.rvmrc
+.rvmrc.*
+.sass-cache
+.sass-cache/
+.sass-cache/*
+.yardoc
+.yardopts
+capybara-*html
+coverage
+db/*.sqlite3
+db/*.sqlite3
+db/*.sqlite3-journal
+db/schema.rb
+doc/api
+doc/app
+index/**/*
+log/*.log
+public/javascripts/cache
+public/stylesheets/cache
+public/system/*
+public/themes/*
+refinerycms-*.gem
+tmp
+tmp/
+tmp/**/*
+vendor/cache

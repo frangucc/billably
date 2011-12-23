@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Billably::Application.load_tasks
+Locomotive::Application.load_tasks
