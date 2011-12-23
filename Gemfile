@@ -1,6 +1,7 @@
 source :rubygems
 
 gem 'aws-s3'
+gem 'bourbon', '~> 1.2.0'
 gem 'capistrano'
 gem 'capistrano-ext'
 gem 'carrierwave'
@@ -31,6 +32,12 @@ gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git'
 gem 'sass-rails'
 gem 'schedule_atts'
 
+group :assets do
+  gem 'haml'
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
 group :development, :test do
   gem 'autotest'
   gem 'capybara'
@@ -42,11 +49,16 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'shoulda'
+  gem 'sqlite3'
   gem 'timecop', '0.3.5'
 end
 
 group :production do
   gem 'pg'
   gem 'seo_meta', :git => 'git://github.com/parndt/seo_meta.git'
-#  gem 'therubyracer-heroku'
+# gem 'therubyracer-heroku'
+end
+
+group :test do
+  gem 'turn', :require => false
 end

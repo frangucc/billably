@@ -1,0 +1,165 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "shared.css.scss";
+
+.categories-controller {
+  .main-img-wrapper {
+    position: relative;
+    margin-bottom: 1em;
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      background-color: blue;
+      color: #fff;
+      font-family: 'Lobster', cursive;
+      font-size:22px;
+      @include linear-gradient(top, #f20160 0%, #f20160 100%);
+      @include border-radius(0 0 5px 5px);
+      @include box-shadow(inset 0 4px 13px #c0044e);
+      border-top: 0;
+      padding: 1em;
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+    .join-the-conversation {
+      display: block;
+      width: 12em;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      color: #dedede;
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
+      padding: 1em;
+      border: 0px solid #ccc;
+      @include border-radius(5px);
+      background: rgba(0, 0, 0, 0.8) url("join-the-conversation.png") 195px center no-repeat;
+      padding-right: 55px;
+      text-align: right;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .combo {
+    width: 28%;
+    padding: 2%;
+    margin-left: 2%;
+    float: left;
+    border: 1px solid #dedede;
+    position: relative;
+    margin-bottom: 2em;
+    &.first {
+      margin-left: 0;
+    }
+    &.last {
+      float: right;
+      margin: 0;
+    }
+    .combo-id {
+      position: absolute;
+      top: 2%;
+      left: 6%;
+      background-color: #fff;
+      width: 2em;
+      height: 2em;
+      text-align: center;
+      line-height: 2em;
+      color: #858585;
+    }
+    .btn-wrapper,
+    .buttontrack-wrapper {
+      position: absolute;
+      top: 145px;
+      right: 0;
+      width: 10em;
+      background: #fff;
+      padding: 0.7em 9% 0.5em 0.7em;
+      .btn {
+        font-size: 12px;
+      }
+    }
+    .buttontrack-wrapper {
+      top: 0;
+      width: 107px;
+      padding: 16px 0px 0.5em 0;
+      .buttontrack {
+        float: right;
+        margin: 0 21px 0 0;
+      }
+    }
+    .combo-img {
+      float: right;
+    }
+    h1 {
+      padding-top: 10px;
+    }
+  }
+  .most-subscribed,
+  .all-subscriptions {
+    width: 58%;
+    float: left;
+    h1.secondary-heading {
+      border-bottom: 1px solid #d9d9d9;
+      padding-bottom: 1em;
+      margin-bottom: 0;
+    }
+  }
+  .subscription-list {
+    border-right: 1px solid #d9d9d9;
+    padding: 2em 2em 2em 0;
+  }
+  .subscription {
+    clear: both;
+    overflow: auto;
+    margin-bottom: 2em;
+    position: relative;
+    padding-right: 103px;
+    &.last {
+      margin-bottom: 0;
+    }
+    img {
+      float: left;
+      width: 23%;
+    }
+    .info {
+      float: right;
+      width: 70%;
+    }
+    .btn {
+      font-size: 12px;
+      clear: both;
+      width: 10em;
+    }
+    .buttontrack {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      float: right;
+    }
+  }
+  .all-subscriptions {
+    width: 42%;
+    li {
+      clear: both;
+      overflow: auto;
+      margin-left: 2em;
+      &.first {
+        margin-top: 2em;
+      }
+      a {
+        font-weight: bold;
+      }
+      li {
+        clear: none;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+
+

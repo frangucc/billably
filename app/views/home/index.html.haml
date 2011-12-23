@@ -1,2 +1,87 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.erb
+= render :partial => 'shared/sidebar'
+
+%section.main-content
+  %div.main-img-wrapper
+    = image_tag('content/bread.png', :alt => "Product name", :class => "main-img")
+    = link_to("Merchant Details", "#", :class => "btn tertiary")
+
+  = image_tag('content/user.png', :alt => "Username", :class => "user-img")
+
+  %div.merchant-info
+    = image_tag('content/logo.png', :alt => "D'Amato Bakery")
+
+    %h1
+      = link_to("D'Amato's Bakery")
+      = " - Chicago, Illinois"
+    %ul.details
+      %li= "923 Members"
+      %li.last= "392 Reviews"
+
+  %section.quick-subscription
+    %h1.secondary-heading= "Quick Subscription Information"
+    %div.tab-wrapper
+      %ul.tab
+        %li= link_to("General Info", "#", :rel => "tab1", :class => "defaulttab")
+        %li= link_to("Shipping Info", "#", :rel => "tab2")
+        %li= link_to("Details", "#", :rel => "tab3")
+      %div#tab1.tab-content.general-info
+        %p= "Chicago's premier fresh sustainably sourced fresh fish and seafood market. We specialize in cutting sushi quality fresh globally sourced fish every day. Fish, seafood, home made gourmet foods to go."
+        %section
+          %h1= "Fish options include"
+          %ul.bullets
+            %li= "Atlantic Salmon"
+            %li= "Ahi Tuna"
+            %li= "Chilean Seabass"
+            %li= "Porgies"
+          %p= link_to("See configuration options", "#")
+        %section
+          %h1= "D'Amato's video"
+          %a{:href => "http://vimeo.com/8245346", :rel => "prettyPhoto", :title => "How Billably Works"}
+            = image_tag('content/damatos-video.png', :alt => "D'Amato's Video")
+      %div#tab2.tab-content
+        %p= "Content"
+      %div#tab3.tab-content
+        %p= "Content"
+
+%section.right-sidebar
+  %section
+    %h1.hidden= "Delivery options"
+    %form
+      %fieldset
+        %legend.get= "Fresh D'Amatos Bread Delivered"
+        %div.options
+          %div.option.active="1x"
+          %div.option="3x"
+          %div.option="6x"
+          %div.option.last="9x"
+      %fieldset
+        %legend= "Monthly"
+        %div.buttontrack.large
+          %div.button.large
+            %span.label.large="Off"
+        %p.message
+          = "Get fresh bread delivered from"
+          = link_to("D'Amatos Bakery", "#")
+          = "weekly or monthly for $29.00 & up."
+          = link_to("Learn More", "#")
+  %section.location
+    %h1.hidden= "Location"
+    = image_tag('content/map.png')
+    %p
+      = link_to("D'Amatos Bakery")
+      = ", Chicago, Illinois"
+
+  %section.how-it-works
+    %h1.secondary-heading= "How Billably Works"
+    %a{:href => "http://vimeo.com/8245346", :rel => "prettyPhoto", :title => "How Billably Works"}
+      = image_tag('content/video.png', :alt => "How Billably Works")
+
+%section.as-seen-on
+  %h1= "As seen on:"
+  %ul
+    %li= link_to(image_tag('content/press-logos/cnn.png', :alt => "CNN"), "#", :title => "CNN")
+    %li= link_to(image_tag('content/press-logos/the-new-york-times.png', :alt => "The New York Times"), "#", :title => "The New York Times")
+    %li= link_to(image_tag('content/press-logos/bbc.png', :alt => "BBC"), "#", :title => "BBC")
+    %li= link_to(image_tag('content/press-logos/forbes.png', :alt => "Forbes"), "#", :title => "Forbes")
+    %li= link_to(image_tag('content/press-logos/the-wall-street-journal.png', :alt => "The Wall Stree Journal"), "#", :title => "The Wall Stree Journal")
+    %li= link_to(image_tag('content/press-logos/nbc.png', :alt => "NBC"), "#", :title => "NBC")

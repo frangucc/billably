@@ -1,85 +1,40 @@
-.bundle
-db/*.sqlite3
-log/*.log
-tmp/
-.sass-cache/
-db/schema.rb
-# Vim
-*.swp
-*.swo
-# Rails
-.bundle
-db/*.sqlite3
-db/*.sqlite3-journal
-*.log
-tmp
-tmp/**/*
-
-# Documentation
-doc/api
-doc/app
-.yardoc
-.yardopts
-coverage
-
-# Public Uploads
-public/system/*
-public/themes/*
-
-# Public Cache
-public/javascripts/cache
-public/stylesheets/cache
-
-# Vendor Cache
-vendor/cache
-
-# Acts as Indexed
-index/**/*
-
-# Refinery Specific
-*.tmproj
 *.autobackupbyrefinery.*
-refinerycms-*.gem
-
-# Mac
-.DS_Store
-
-# Windows
-Thumbs.db
-
-# NetBeans
-nbproject
-
-# Eclipse
-.project
-
-# Redcar
-.redcar
-
-# Rubinius
+*.log
 *.rbc
-
-# Vim
-*.swp
 *.swo
-
-# RubyMine
-.idea
-
-# E-texteditor
-.eprj
-
-# Backup
+*.swo
+*.swp
+*.swp
+*.tmproj
 *~
-
-# Capybara Bug
-capybara-*html
-
-# sass
-.sass-cache
-.sass-cache/*
-
-#rvm
+.DS_Store
+.bundle
+.bundle
+.eprj
+.idea
 .rvmrc
 .rvmrc.*
-
+.sass-cache
+.sass-cache/
+.sass-cache/*
+.yardoc
+.yardopts
+capybara-*html
+coverage
+db/*.sqlite3
+db/*.sqlite3
+db/*.sqlite3-journal
+db/schema.rb
+doc/api
+doc/app
+index/**/*
+log/*.log
+public/javascripts/cache
+public/stylesheets/cache
+public/system/*
+public/themes/*
+refinerycms-*.gem
+tmp
+tmp/
+tmp/**/*
+vendor/cache

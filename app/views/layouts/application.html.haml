@@ -1,27 +1,72 @@
 !!! 5
-%html
-  %head
-    %title Realvolve
-    = stylesheet_link_tag "application"
-    = csrf_meta_tags
-  %body
-    #header
-      #nav
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class='no-js' lang='en'>
+<!--<![endif]-->
+%head
+  %title= "Billably"
+  %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1; charset=utf-8"}
+  %meta{"charset" => "utf-8"}
+  %meta{ :content => "All your subscriptions in one place", :name => "description"}
+  %meta{ :content => "Francesco Pinto, Vero Rebagliatte", :name => "author" }
+  = stylesheet_link_tag "application", "http://fonts.googleapis.com/css?family=Lobster"
+  = csrf_meta_tag
+
+/
+  :javascript
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'XXXXXX']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+%body{:class => "#{params[:controller].parameterize}-controller"}
+  %div.wrapper
+    %header.main
+      %h1
+        %a.logo{:href => root_path, :title => "Billably"}
+          = image_tag('billably.png', :alt => "Billably")
+      %div#city-select
+        %p.current-city= "Chicago"
+        %ul.available-cities
+          %li= link_to("Chicago", "#")
+          %li= link_to("New York", "#")
+          %li= link_to("Boston", "#")
+
+      %nav
+        %h1.hidden= "Main navigation"
         %ul
-          - if current_user
-            %li= current_user.username
-            %li= link_to "Sign Out", destroy_user_session_path
-          - else
-            %li= link_to "Sign In", new_user_session_path
+          %li= link_to_unless_current("How it works", "#")
+          %li= link_to_unless_current("Sign Up", "#")
+          %li= link_to_unless_current("Login", "#")
+          %li.last= link_to_unless_current("Offer a subscription", "#", :class => "btn")
+      %h2.tagline= "All your subscriptions in one great place"
 
-      - unless current_user
-        = render :partial => 'shared/omniauth_providers'
-      #flash
-        - flash.each do |key, value|
-          .message{ :class => key }
-            %p= value
-    #main
+    %section.main
       = yield
-    #footer
-      = javascript_include_tag "application"
 
+    %footer.main
+      %h1.hidden= "Tertiary navigation"
+      %ul
+        %li= link_to("About", "#")
+        %li= link_to("Mobile App", "#")
+        %li= link_to("About", "#")
+        %li= link_to("Contact", "#")
+        %li= link_to("Jobs", "#")
+        %li= link_to("Blog", "#")
+        %li= link_to("Help", "#")
+        %li= link_to("Terms & Privacy", "#")
+        %li= link_to("Top Cities", "#")
+      %p= "Join us on:"
+      %ul
+        %li= link_to("Twitter", "#")
+        %li= link_to("Facebook", "#")
+        %li= link_to("YouTube", "#")
+      %p.copyright= "&copy;".html_safe + " Billably 2012. All Rights Reserved. 1-866-797-7954"
+
+  = javascript_include_tag "application"

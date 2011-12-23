@@ -57,5 +57,5 @@ Locomotive::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  Refinery::Core.s3_backend = true  
+  Refinery::Core.s3_backend = true
 end

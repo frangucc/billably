@@ -1,0 +1,13 @@
+/* Variables ************************************************/
+$main-color: #0273dc; /* blue */
+
+/* Mixins ************************************************/
+@mixin frame {
+  @include border-radius(4px);
+  background-color: #fff;
+  border: 1px solid #D6E5E8;
+}
+
+/* Fonts ************************************************/
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+

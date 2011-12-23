@@ -1,0 +1,127 @@
+= render :partial => 'shared/sidebar'
+
+%section.main-content
+  %div.main-img-wrapper
+    %h1= "Magazine Subscriptions"
+    = image_tag('content/magazine-subscriptions.png', :alt => "Magazine Subscriptions", :class => "main-img")
+    = link_to("Join a magazine club and join the conversation", "#", :class => "join-the-conversation")
+
+  %h2.secondary-heading= "Monthly Magazine Subscription Packages"
+  %ul
+    %li.combo.first
+      %div.combo-id= "1"
+      = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
+      %div.buttontrack-wrapper
+        %div.buttontrack
+          %div.button
+            %span.label="Off"
+      %div.btn-wrapper
+        = link_to("Subscription Details", "#", :class => "btn secondary")
+      = image_tag('content/magazines/outdoor-combo.png', :alt => "Outdoor combo", :class => "combo-img")
+      %h1= link_to("Outdoor Combo", "#")
+      %ul.details
+        %li= "$4.99 Monthly"
+        %li.last= "329 Members"
+
+    %li.combo
+      %div.combo-id= "2"
+      = image_tag('content/magazines/business.png', :alt => "Business combo")
+      %div.buttontrack-wrapper
+        %div.buttontrack
+          %div.button
+            %span.label="Off"
+      %div.btn-wrapper
+        = link_to("Subscription Details", "#", :class => "btn secondary")
+      = image_tag('content/magazines/business-combo.png', :alt => "Business combo", :class => "combo-img")
+      %h1= link_to("Business Combo", "#")
+      %ul.details
+        %li= "$4.99 Monthly"
+        %li.last= "329 Members"
+
+    %li.combo.last
+      %div.combo-id= "3"
+      = image_tag('content/magazines/photography.png', :alt => "Photography combo")
+      %div.buttontrack-wrapper
+        %div.buttontrack
+          %div.button
+            %span.label="Off"
+      %div.btn-wrapper
+        = link_to("Subscription Details", "#", :class => "btn secondary")
+      = image_tag('content/magazines/photography-combo.png', :alt => "Photography combo", :class => "combo-img")
+      %h1= link_to("Photography Combo", "#")
+      %ul.details
+        %li= "$4.99 Monthly"
+        %li.last= "121 Members"
+  %div.clearfix
+
+  %section.most-subscribed
+    %h1.secondary-heading= "Most Subscribed"
+    %ul.subscription-list
+      %li.subscription
+        = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
+        %div.info
+          %h1= link_to("Field and Outdoor Combo", "#")
+          %ul.details
+            %li= "$4.99 Monthly"
+            %li.last= "329 Members"
+          = link_to("Subscription Details", "#", :class => "btn secondary")
+        %div.buttontrack
+          %div.button
+            %span.label="Off"
+      %li.subscription
+        = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
+        %div.info
+          %h1= link_to("Field and Outdoor Combo", "#")
+          %ul.details
+            %li= "$4.99 Monthly"
+            %li.last= "329 Members"
+          = link_to("Subscription Details", "#", :class => "btn secondary")
+        %div.buttontrack
+          %div.button
+            %span.label="Off"
+      %li.subscription.last
+        = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
+        %div.info
+          %h1= link_to("Field and Outdoor Combo", "#")
+          %ul.details
+            %li= "$4.99 Monthly"
+            %li.last= "329 Members"
+          = link_to("Subscription Details", "#", :class => "btn secondary")
+        %div.buttontrack
+          %div.button
+            %span.label="Off"
+
+  %section.all-subscriptions
+    %h1.secondary-heading= "All Magazine Subscriptions"
+    %ul
+      %li.first
+        = link_to("Womens Fashion", "#")
+        %ul.details
+          %li= "$4.99 Monthly"
+          %li.last= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul.details
+          %li= "$4.99 Monthly"
+          %li.last= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul.details
+          %li= "$4.99 Monthly"
+          %li.last= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul.details
+          %li= "$4.99 Monthly"
+          %li.last= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul.details
+          %li= "$4.99 Monthly"
+          %li.last= "329 Members"
+      %li
+        = link_to("Womens Fashion", "#")
+        %ul.details
+          %li= "$4.99 Monthly"
+          %li.last= "329 Members"
+

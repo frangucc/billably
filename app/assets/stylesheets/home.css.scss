@@ -1,0 +1,151 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "shared.css.scss";
+
+.home-controller {
+  /* home layout: 20 + 2 + 47 + 2 + 29 */
+  .left-sidebar {
+    margin-right: 2%;
+  }
+  .main-content {
+    width: 47%;
+    float:left;
+  }
+  .right-sidebar {
+    float: right;
+    width: 29%;
+  }
+  .wrapper {
+    background: url("truck.png") transparent right 100px no-repeat;
+  }
+  .main-img,
+  .user-img,
+  .merchant-info {
+    padding: 2%;
+    @include frame;
+    margin-bottom: 1em;
+    h1 {
+      font-size: 14px;
+      margin-bottom: 1em;
+      display: inline;
+    }
+    img {
+      float: right;
+      padding: 0 20px;
+      border-left: 1px solid #efefef;
+    }
+  }
+  .main-img-wrapper {
+    position: relative;
+    margin-bottom: 1em;
+    .btn {
+      position: absolute;
+      bottom: 11px;
+      right: 6px;
+      width: 10em;
+      border:12px solid #fff;
+      @include box-shadow(inset 0px 0px -3px -3px #000, 0 -2px -8px #000);
+    }
+  }
+  .main-img {
+    max-width: 96%;
+    margin: 0;
+  }
+  .user-img {
+    float: left;
+    padding: 1%;
+    width: 12%;
+  }
+  .merchant-info {
+    float: right;
+    width: 80%;
+  }
+  .quick-subscription {
+    margin-bottom: 3em;
+    h1 {
+      clear: both;
+    }
+  }
+  legend {
+    font-size: 26px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    line-height: 30px;
+    padding-bottom:.3em;
+  }
+  form,
+  .message {
+    margin-bottom: 1em;
+    padding:.6em;
+  }
+  .get {
+    background: url("get.png") transparent left top no-repeat;
+    padding: 20px 27px 20px 27px;
+    margin:0 0 0 30px;
+  }
+  /* Options */
+  .options {
+    width: 223px;
+    margin: 0 auto;
+    overflow: auto;
+    .option {
+      color: #666;
+      border: 1px solid #ccc;
+      text-shadow: 0 1px 1px #ffffff;
+      float: left;
+      margin: 0;
+      font-size: 24px;
+      padding: 10px 10px 15px 10px;
+      width: auto;
+      height: auto;
+      margin-right: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      @include border-radius(5px);
+      @include box-shadow(0 2px 6px #ccc inset, 0 1px 1px #fff);
+
+      &.active {
+        color: #fff;
+        text-shadow: 0 1px 1px #003465;
+        @include linear-gradient(top, #046fd4 0%, #014c91 100%);
+        @include box-shadow(0 1px 1px #fff);
+      }
+      &.last {
+        margin-right: 0;
+      }
+    }
+  }
+  .location,
+  .how-it-works img {
+    @include frame;
+    padding: 3%;
+  }
+  .location {
+    margin-bottom: 1em;
+    p {
+      background: url("location-icon.png") transparent center left no-repeat;
+      padding-left: 20px;
+    }
+  }
+  .as-seen-on {
+    height: 37px;
+    margin-bottom: 3em;
+    h1 {
+      float: left;
+      line-height: 37px;
+      margin-right: 1em;
+      font-style: italic;
+      color: #6d6d6d;
+      font-size: 14px;
+    }
+    clear: both;
+    li {
+      float: left;
+      padding: 0 3%;
+    }
+  }
+}
+
