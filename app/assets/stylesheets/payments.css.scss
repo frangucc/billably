@@ -1,22 +1,75 @@
 @import "shared.css.scss";
 
 .payments-controller {
+  section.main {
+    clear: both;
+  }
+  .tagline {
+    display: none;
+  }
   .main-content,
   .right-sidebar {
+    background-color: #fff; 
+    margin-top: 2em;
     border: 1px solid #c5d1d3;
     @include border-radius(5px);
-    background-color: #fff;
     margin-bottom: 2em;
     @include box-shadow(inset 0px 0px 4px 2px rgba(241, 241, 241, 0.9), 0 0px 0px #333333);
+    padding: 1.5% 2% 2% 2%;
   }
   .main-content {
+    background: url("header_bg.png") #fff top left repeat-x;
     width: 66%;
-    padding: 2%;
+    float: left;
   }
   .right-sidebar {
     width: 24%;
-    padding: 2%;
+    float: right;
   }
+  h1.main {
+    font-size: 20px;
+    margin-bottom: 2em;
+    margin-left: 0.5em;
+  }
+  fieldset {
+    padding-top: 1em;
+  }
+  legend {
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddeacc;
+    display: block;
+    width: 98%;
+    margin: 0 0.5em;
+  }
+  .field {
+    margin-bottom: 1em;
+    padding: 0.5em;
+  }
+  label {
+    display: block;
+  } 
+  .required label {
+    font-weight: bold;
+  }
+  input,
+  textarea {
+    border: 1px solid #dedede;
+    padding: 0.9em;
+    -webkit-box-shadow: inset 1px 1px 2px 0px #dddddd;
+    -moz-box-shadow: inset 1px 1px 2px 0px #dddddd;
+    box-shadow: inset 1px 1px 2px 0px #dddddd;  
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    width: 300px;
+  }
+  input:focus,
+  textarea:focus {
+    border-color: #26A9E0;
+  }
+
+
 
 }
 
