@@ -42,60 +42,6 @@
       }
     }
   }
-  .combo {
-    width: 28%;
-    padding: 2%;
-    margin-left: 2%;
-    float: left;
-    border: 1px solid #dedede;
-    position: relative;
-    margin-bottom: 2em;
-    &.first {
-      margin-left: 0;
-    }
-    &.last {
-      float: right;
-      margin: 0;
-    }
-    .combo-id {
-      position: absolute;
-      top: 2%;
-      left: 6%;
-      background-color: #fff;
-      width: 2em;
-      height: 2em;
-      text-align: center;
-      line-height: 2em;
-      color: #858585;
-    }
-    .btn-wrapper,
-    .buttontrack-wrapper {
-      position: absolute;
-      top: 145px;
-      right: 0;
-      width: 10em;
-      background: #fff;
-      padding: 0.7em 9% 0.5em 0.7em;
-      .btn {
-        font-size: 12px;
-      }
-    }
-    .buttontrack-wrapper {
-      top: 0;
-      width: 107px;
-      padding: 16px 0px 0.5em 0;
-      .buttontrack {
-        float: right;
-        margin: 0 21px 0 0;
-      }
-    }
-    .combo-img {
-      float: right;
-    }
-    h1 {
-      padding-top: 10px;
-    }
-  }
   .most-subscribed,
   .all-subscriptions {
     width: 58%;
@@ -110,7 +56,7 @@
     border-right: 1px solid #d9d9d9;
     padding: 2em 2em 2em 0;
   }
-  .subscription {
+  .combo {
     clear: both;
     overflow: auto;
     margin-bottom: 2em;
@@ -159,7 +105,4 @@
     }
   }
 }
-
-
-
 

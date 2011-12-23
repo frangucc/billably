@@ -7,6 +7,8 @@
 @import "html5-reset";
 @import "home";
 @import "categories";
+@import "clubs";
+@import "payments";
 @import "prettyPhoto";
 
 /* Global Styles ************************************************/
@@ -150,6 +152,10 @@ a {
     width: 130px;
     height: 50px;
   }
+  &.on {
+      @include box-shadow(0 2px 6px #508400 inset, 0 1px 1px #fff);
+      @include linear-gradient(top, #85c921 0%, #63a300 100%);
+    }
   .button {
     background: #efefef;
     border: 1px solid #0e517d;
@@ -196,6 +202,7 @@ ul.bullets {
 /* Emphasized text */
 .emphasized {
   font-family: 'Lobster', cursive;
+  font-weight:normal;
 }
 
 /* Header */
@@ -286,7 +293,7 @@ img {
 }
 .secondary-heading {
   color: #333333;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   font-size: 14px;
 }
 .clearfix {
@@ -299,6 +306,60 @@ ul.details li {
   font-size: 12px;
   &.last::before {
     content: " | ";
+  }
+}
+.subscription {
+  width: 28%;
+  padding: 2%;
+  margin-left: 2%;
+  float: left;
+  border: 1px solid #dedede;
+  position: relative;
+  margin-bottom: 2em;
+  &.first {
+    margin-left: 0;
+  }
+  &.last {
+    float: right;
+    margin: 0;
+  }
+  .combo-id {
+    position: absolute;
+    top: 2%;
+    left: 6%;
+    background-color: #fff;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    color: #858585;
+  }
+  .btn-wrapper,
+  .buttontrack-wrapper {
+    position: absolute;
+    top: 145px;
+    right: 0;
+    width: 10em;
+    background: #fff;
+    padding: 0.7em 9% 0.5em 0.7em;
+    .btn {
+      font-size: 12px;
+    }
+  }
+  .buttontrack-wrapper {
+    top: 0;
+    width: 107px;
+    padding: 16px 0px 0.5em 0;
+    .buttontrack {
+      float: right;
+      margin: 0 21px 0 0;
+    }
+  }
+  .combo-img {
+    float: right;
+  }
+  h1 {
+    padding-top: 10px;
   }
 }
 

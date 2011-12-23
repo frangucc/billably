@@ -8,13 +8,13 @@
 
   %h2.secondary-heading= "Monthly Magazine Subscription Packages"
   %ul
-    %li.combo.first
+    %li.subscription.first
       %div.combo-id= "1"
       = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
       %div.buttontrack-wrapper
-        %div.buttontrack
+        %div.buttontrack.on
           %div.button
-            %span.label="Off"
+            %span.label="On"
       %div.btn-wrapper
         = link_to("Subscription Details", "#", :class => "btn secondary")
       = image_tag('content/magazines/outdoor-combo.png', :alt => "Outdoor combo", :class => "combo-img")
@@ -23,7 +23,7 @@
         %li= "$4.99 Monthly"
         %li.last= "329 Members"
 
-    %li.combo
+    %li.subscription
       %div.combo-id= "2"
       = image_tag('content/magazines/business.png', :alt => "Business combo")
       %div.buttontrack-wrapper
@@ -38,7 +38,7 @@
         %li= "$4.99 Monthly"
         %li.last= "329 Members"
 
-    %li.combo.last
+    %li.subscription.last
       %div.combo-id= "3"
       = image_tag('content/magazines/photography.png', :alt => "Photography combo")
       %div.buttontrack-wrapper
@@ -57,7 +57,7 @@
   %section.most-subscribed
     %h1.secondary-heading= "Most Subscribed"
     %ul.subscription-list
-      %li.subscription
+      %li.combo
         = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
         %div.info
           %h1= link_to("Field and Outdoor Combo", "#")
@@ -68,7 +68,7 @@
         %div.buttontrack
           %div.button
             %span.label="Off"
-      %li.subscription
+      %li.combo
         = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
         %div.info
           %h1= link_to("Field and Outdoor Combo", "#")
@@ -79,7 +79,7 @@
         %div.buttontrack
           %div.button
             %span.label="Off"
-      %li.subscription.last
+      %li.combo.last
         = image_tag('content/magazines/outdoor.png', :alt => "Outdoor combo")
         %div.info
           %h1= link_to("Field and Outdoor Combo", "#")
@@ -124,4 +124,6 @@
         %ul.details
           %li= "$4.99 Monthly"
           %li.last= "329 Members"
+
+
 
