@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Chargify do
   describe "Associations" do
-    it { should have_one :purchase }
+    it { should have_many :purchases }
   end
 
   describe "Database Columns" do

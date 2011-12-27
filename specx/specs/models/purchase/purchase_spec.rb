@@ -34,8 +34,9 @@ describe Purchase do
     it { should_not allow_value('12345').for(:card_number) }
     it { should_not allow_value('123').for(:card_number) }
 
-    it { should_not allow_value(Time.now + 1.day).for(:purchase_date) }
     it { should_not allow_value(-1).for(:price) }
     it { should_not allow_value(1.7).for(:price) }
+
+    it { should_not allow_value(Time.now + 1.day).for(:purchase_date) }
   end
 end

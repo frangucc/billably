@@ -1,8 +1,5 @@
 class Image < ActiveRecord::Base
-  mount_uploader :attachment, AttachmentUploader
-
-  belongs_to :merchant
-  belongs_to :package
+  concerned_with :image_active_record, :image_upload
 
   def save_and_process_attachment(options = {now: true})
     if options[:now]
