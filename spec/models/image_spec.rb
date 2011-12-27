@@ -25,6 +25,5 @@ describe Image do
       end
     end
 
-    it { should_not allow_value(nil).for(:attachment) }
   end
 end

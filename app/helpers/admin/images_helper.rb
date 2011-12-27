@@ -39,9 +39,7 @@ module Admin::ImagesHelper
                     secret_access_key, policy)).gsub("\n","")
 
     out = ""
-     upload_url = "http://#{bucket}.s3.amazonaws.com/"
-    out << "<a class='medium silver button ram #{options[:button_class]}' href='#' id='#{options[:browse_button]}'>#{options[:button_text]}</a>"
-
+    upload_url = "http://#{bucket}.s3.amazonaws.com/"
     out << javascript_tag("
       var upload_url = 'http://#{bucket}.s3.amazonaws.com/';
           acl_option = '#{options[:acl]}';
@@ -53,104 +51,7 @@ module Admin::ImagesHelper
           option_filter_extension = '#{options[:filter_extentions]}';
           path_to_file = '#{folder}';
     ")
-    out << javascript_tag("
-      $(function() {
-        /*
-        * S3 Uploader instance
-        */
-        // image uploader via plupload
-        var uploader = new plupload.Uploader({
-          runtimes : 'flash,silverlight,html5',
-          browse_button : '#{options[:browse_button]}',
-          max_file_size : '#{options[:max_filesize]}',
-          url : '#{upload_url}',
-          flash_swf_url: '/javascripts/plupload/plupload.flash.swf',
-          silverlight_xap_url: '/javascripts/plupload/plupload.silverlight.xap',
-          init : {
-            FilesAdded: function(up, files) {
-              plupload.each(files, function(file) {
-                if (up.files.length > 1) {
-                  up.removeFile(file);
-                }
-              });
-              if (up.files.length >= 1) {
-                $('##{options[:browse_button]}').fadeOut('slow');
-              }
-            },
-            FilesRemoved: function(up, files) {
-              if (up.files.length < 1) {
-                $('##{options[:browse_button]}').fadeIn('slow');
-              }
-            }
-          },
-          multi_selection: false,
-          multipart: true,
-          multipart_params: {
-            'key': '#{options[:stored_folder]}/#{folder}/${filename}',
-            'Filename': '${filename}', // adding this to keep consistency across the runtimes
-                        'acl': '#{options[:acl]}',
-                        'Content-Type': '#{options[:content_type]}',
-                        'success_action_status': '201',
-                        'AWSAccessKeyId' : '#{access_key_id}',
-                        'policy': '#{policy}',
-                        'signature': '#{signature}' 
-           },
-          filters : [
-              {title : '#{options[:filter_title]}', extensions : '#{options[:filter_extentions]}'}
-          ],
-          file_data_name: 'file'
-        });
 
-        // instantiates the uploader
-        uploader.init();
-
-        // binds progress to progress bar
-        uploader.bind('UploadProgress', function(up, file) {
-          if(file.percent < 100){
-              $('#progress_bar .ui-progress').css('width', file.percent+'%');
-          }
-          else {
-              $('#progress_bar .ui-progress').css('width', '100%');
-              $('span.ui-label').text('Complete');
-          }
-        });
-
-        // shows error object in the browser console (for now)
-        uploader.bind('Error', function(up, error) {
-          // unfortunately PLUpload gives some extremely vague
-          // Flash error messages so you have to use WireShark
-          // for debugging them (read the README)
-          alert('There was an error.  Check the browser console log for more info');
-          console.log('Expand the error object below to see the error. Use WireShark to debug.');
-
-          console.log(error);
-        });
-
-        $('form').submit(function(e){
-
-           if (uploader.files.length > 0) {
-            // When all files are uploaded submit form
-             uploader.bind('FileUploaded', function(up, file) {
-               if (uploader.files.length === (uploader.total.uploaded + uploader.total.failed)) {
-                 $('#remote_attachment_net_url').val(upload_url + 'attachment/' + path_to_file + '/' + file.name);
-                  console.log($('#remote_attachment_net_url').val());
-                 $('form')[0].submit();
-                 }
-               });
-             $('#progress_bar .ui-progress').css('width', '5%');
-             $('span.ui-label').show();
-             $('#progress_bar').show('fast', function () {
-               uploader.start();
-             });
-           };
-
-
-          return false;
-        });
-
-      });
-      
-     ") 
   end
 end
 

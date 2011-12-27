@@ -8,24 +8,23 @@ app_require 'app/models/user/user_active_record'
 
 describe Purchase do
   describe "Associations" do
-    it { should belong_to :billing }
+    it { should belong_to :chargify }
     it { should belong_to :package }
-    it { should belong_to :serving }
     it { should belong_to :user }
   end
 
   describe 'Database Columns' do
-    it { should have_db_column(:billing_id).of_type(:integer) }
     it { should have_db_column(:card_number).of_type(:string) }
+    it { should have_db_column(:chargify_id).of_type(:integer) }
     it { should have_db_column(:card_type).of_type(:string) }
     it { should have_db_column(:purchase_date).of_type(:date) }
     it { should have_db_column(:package_id).of_type(:integer) }
     it { should have_db_column(:price).of_type(:integer) }
-    it { should have_db_column(:serving_id).of_type(:integer) }
     it { should have_db_column(:user_id).of_type(:integer) }
   end
 
   describe 'Validations' do
+    it { should validate_presence_of :chargify }
     it { should validate_presence_of :package }
     it { should validate_presence_of :purchase_date }
     it { should validate_presence_of :price }

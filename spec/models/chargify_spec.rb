@@ -1,6 +1,10 @@
 require 'spec_helper'
 
-describe ICalendar do
+describe Chargify do
+  describe "Associations" do
+    it { should have_one :purchase }
+  end
+
   describe "Database Columns" do
     it { should have_db_column(:schedule_yaml).of_type(:text) }
   end
