@@ -9,16 +9,13 @@
           - resource.errors.full_messages.each do |msg|
             %li= msg
   = f.hidden_field :remote_attachment_net_url, :id => "remote_attachment_net_url"
-  .tcenter.grayField.ral
-    %h2.borderBottom Upload New Image
-    #progress_bar.ui-progress-bar.ui-container
-      .ui-progress{:style => "width: 5%;"}
-        %span.ui-label{:style => "display:none;"}
-          Uploading
 
   = raw s3_uploader(:max_filesize => 500.megabytes)
-  /#uploader
-  /%a{:id => "pickfiles", :href => "#", :class => "medium silver button ram"} Select image
+  #uploader
+    %a{:id => "pickfiles", :href => "", :class => "medium silver button ram"} Select image
+    .tcenter.grayField.ral{:style => "display: none; margin-top: 10px;"}
+      %div#upload_progress_bar.plupload_upload_progress
+        %div#plupload-progress-status{:style=> "height: 100%; background: #47B21D; width:1%;"}
   %br
   = f.submit
 
