@@ -29,10 +29,16 @@ $(document).ready(function(){
   $.fn.changelabel = function(text){
     $(this).children('.label').html(text);
   }
-  $('.button').toggle(function(){
-    $(this).delay(200).animate({"marginLeft" : "37px"}, 30).changelabel("On");
-  }, function(){
-    $(this).delay(200).animate({"marginLeft" : "-1px"}, 30).changelabel("Off");
+  $(".button").click(function(){
+    var container = $(this).parent(".buttontrack");
+    if (container.hasClass("on")){
+      $(this).delay(200).animate({"marginLeft" : "-1px"}, 30).changelabel("Off");
+      $(this).parent(".buttontrack").removeClass("on");
+
+    } else {
+      $(this).delay(200).animate({"marginLeft" : "37px"}, 30).changelabel("On");
+      $(this).parent(".buttontrack").addClass("on");
+    }
   });
 
   // City Select
