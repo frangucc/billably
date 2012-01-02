@@ -43,6 +43,14 @@ $(document).ready(function(){
     $('.current-city').html($(this).text());
     e.preventDefault();
   });
+
+  // Drill-down
+  $('.drill-down').click(function(e){
+    $(this).toggleClass("expanded");
+    var id = $(this).attr("rel");
+    $("#"+id).toggle();
+    e.preventDefault();
+  });
 });
 
 // Tabs
@@ -54,3 +62,4 @@ function switch_tab(obj){
   $('#'+id).show();
   obj.addClass("active");
 }
+
