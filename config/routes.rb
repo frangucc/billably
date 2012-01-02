@@ -4,6 +4,7 @@ Locomotive::Application.routes.draw do
   resources :categories, :only => [:index, :show]
   resources :clubs, :only => [:index, :show]
   resources :payments, :only => [:index]
+  root :to => "home#index"
 
   match '/auth/:provider/callback' => 'authentications#create'
   devise_for :users, :controllers => { :registrations => 'registrations', :sessions => 'sessions' }
