@@ -343,6 +343,7 @@ ul.details li {
     width: 10em;
     background: #fff;
     padding: 0.7em 9% 0.5em 0.7em;
+    @include box-shadow(inset 0px 0px -3px -3px #000, 0 -2px -8px #000);
     .btn {
       font-size: 12px;
     }
