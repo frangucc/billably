@@ -61,3 +61,34 @@
   %div.configure
     =link_to("Re-configure", "#", :class => "btn")
 
+%section#config-1.hidden
+  %h1= "Configure this subscription"
+  %form
+    %fieldset
+      %p= "Next expected delivery date"
+    %fieldset
+      %p= "Some random option"
+      %select
+        %option= "Option 1"
+        %option= "Option 2"
+        %option= "Option 3"
+    %fieldset
+      %legend.get= "Monthly delivery frequency"
+      %div.options
+        %div.option.active="1x"
+        %div.option="3x"
+        %div.option="6x"
+        %div.option.last="9x"
+    %p.cost
+      = "Monthly Cost:"
+      %span= "$30.00"
+    %p= "Cancel Until: 03/21/12"
+    %p= "By clicking subscribe you agree to the terms and conditions. Your subscription may be cancelled anytime prior to the final cancellation date."
+    %p
+      = "I agree to the"
+      = link_to("Terms and Conditions", "#")
+      = "and"
+      = link_to("Privacy Statement", "#")
+    %p= link_to("Subscribe", "#", :class => "btn large")
+
+
