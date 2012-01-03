@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111230041258) do
+ActiveRecord::Schema.define(:version => 20120103194855) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(:version => 20111230041258) do
     t.boolean  "featured"
     t.string   "name",       :null => false
     t.string   "zipcode",    :null => false
+    t.string   "city"
+    t.string   "state"
   end
 
   create_table "packages", :force => true do |t|
