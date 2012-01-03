@@ -22,15 +22,49 @@
     background: url("header_bg.png") #fff top left repeat-x;
     width: 66%;
     float: left;
+    position: relative;
+    .fb {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 270px;
+      p {
+        float: left;
+        line-height: 53px;
+      }
+      img {
+        padding: 16px;
+      }
+    }
+    h1.main {
+      margin-left: 0.5em;
+    }
   }
   .right-sidebar {
     width: 24%;
     float: right;
+    div {
+      padding: 10px 20px 20px 20px;
+    }
+    ul {
+      margin-bottom: 20px;
+    }
+    /* Drilldown */
+    .drill-down {
+      font-size: 12px;
+      background: url("collapsed.png") transparent left 2px no-repeat;
+      padding-left: 20px;
+      &:hover {
+        text-decoration: underline;
+      }
+      &.expanded {
+        background-image: url("expanded.png");
+      }
+    }
   }
   h1.main {
     font-size: 20px;
     margin-bottom: 2em;
-    margin-left: 0.5em;
   }
   fieldset {
     padding-top: 1em;
@@ -41,6 +75,7 @@
       width: 50%;
     }
   }
+  /* Form */
   legend {
     font-size: 15px;
     font-weight: bold;
@@ -92,8 +127,5 @@
     width: 20em;
     font-size: 14px;
   }
-
-
-
 }
 
