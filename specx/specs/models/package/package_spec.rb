@@ -45,4 +45,3 @@ describe Package do
     it { should_not allow_value(1.7).for(:price) }
   end
 end
-

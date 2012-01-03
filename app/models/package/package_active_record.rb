@@ -19,6 +19,7 @@ class Package < ActiveRecord::Base
 
     def limit_three_in_subscription
       return unless subscription_id
+
       number_packages = Package.where(["subscription_id = ? AND id <> ?",
         self.subscription_id, self.id.to_i]).count
       self.errors.add(:base, "limit three packages in subscription") if

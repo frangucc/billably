@@ -2,6 +2,9 @@ require 'specx_helper'
 
 support_require 'database'
 
+app_require 'lib/validators/string_type_validator'
+app_require 'lib/validators/zipcode_validator'
+app_require 'lib/validators/date_type_validator'
 app_require 'app/models/category/category_active_record'
 app_require 'app/models/package/package_active_record'
 
@@ -31,3 +34,4 @@ describe Category do
     it { should_not allow_value(9.2).for(:order) }
   end
 end
+

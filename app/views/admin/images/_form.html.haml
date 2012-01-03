@@ -8,7 +8,7 @@
         %ul
           - resource.errors.full_messages.each do |msg|
             %li= msg
-  = f.hidden_field :remote_attachment_net_url, :id => "remote_attachment_net_url"
+  = f.hidden_field :remote_attachment_url, :id => "remote_attachment_net_url"
 
   = raw s3_uploader(:max_filesize => 500.megabytes)
   #uploader
