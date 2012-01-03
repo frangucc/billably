@@ -2,6 +2,8 @@ require 'specx_helper'
 
 support_require 'database'
 
+app_require 'lib/validators/zipcode_validator'
+app_require 'lib/validators/date_type_validator'
 app_require 'app/models/purchase/purchase_active_record'
 app_require 'app/models/package/package_active_record'
 app_require 'app/models/user/user_active_record'
@@ -40,3 +42,4 @@ describe Purchase do
     it { should_not allow_value(Time.now + 1.day).for(:purchase_date) }
   end
 end
+

@@ -42,9 +42,12 @@
         %h1.hidden= "Main navigation"
         %ul
           %li= link_to_unless_current("How it works", "#")
-          %li= link_to_unless_current("Sign Up", "#")
-          %li= link_to_unless_current("Login", "#")
-          %li.last= link_to_unless_current("Offer a subscription", "#", :class => "btn")
+          - unless current_user
+            %li= link_to("Sign Up", new_user_registration_url )
+            %li= link_to("Login", new_user_session_url)
+            %li.last= link_to_unless_current("Offer a subscription", "#", :class => "btn")
+          - else
+            %li.last= link_to "Sign Out", destroy_user_session_url
       %h2.tagline= "All your subscriptions in one great place"
 
     %section.main
@@ -64,9 +67,11 @@
         %li= link_to("Top Cities", "#")
       %p= "Join us on:"
       %ul
-        %li= link_to("Twitter", "#")
-        %li= link_to("Facebook", "#")
+        %li= link_to("Twitter", "/auth/twitter")
+        %li= link_to("Facebook", "/auth/facebook")
+        %li= link_to("LinkedIn", "/auth/linkedin")
         %li= link_to("YouTube", "#")
       %p.copyright= "&copy;".html_safe + " Billably 2012. All Rights Reserved. 1-866-797-7954"
 
   = javascript_include_tag "application"
+

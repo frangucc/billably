@@ -6,7 +6,7 @@ feature 'Login as a user with Facebook' do
       OmniAuth.config.add_mock(:facebook, {"uid" => "123456",
                                            "info" => {"email" => "test@facebook.com", "name" => "Test Facebook"},
                                            "credentials" => {"token" => "adf435ea245", "secret" => "h8965df4eab34c"}})
-
+      sign_up_for_refinery
   end
 
   scenario "Confirmed user can login successfully and redirect if he has authenticated" do
@@ -71,7 +71,7 @@ feature 'Login as a user with Twitter' do
       OmniAuth.config.add_mock(:twitter, {"uid" => "123456",
                                           "info" => { "name" => "Test Twitter"},
                                           "credentials" => {"token" => "adf435ea245", "secret" => "h8965df4eab34c"}})
-
+    sign_up_for_refinery
   end
 
   scenario "Confirmed user can login successfully and redirect if he has authenticated" do
@@ -87,7 +87,7 @@ feature 'Login as a user with Twitter' do
   scenario "Logged-in user stays logged in and authentication will be created" do
     user = create :user, :confirmed_at => Time.now, :email => 'test@twitter.com', :password => 'password'
     login_user_with_form user
-
+    page.should have_content("Twitter")
     before_url = page.current_url
     click_on  'Twitter'
     page.has_content?('Sign Out') == true
@@ -137,7 +137,7 @@ feature 'Login as a user with LinkedIn' do
       OmniAuth.config.add_mock(:linkedin, {"uid" => "123456",
                                            "info" => { "name" => "Test LinkedIn"},
                                            "credentials" => {"token" => "adf435ea245", "secret" => "h8965df4eab34c"}})
-
+      sign_up_for_refinery
   end
 
   scenario "Confirmed user can login successfully and redirect if he has authenticated" do

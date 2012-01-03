@@ -5,6 +5,7 @@ Locomotive::Application.routes.draw do
   resources :clubs, :only => [:index, :show]
   resources :payments, :only => [:index]
 
+  match '/auth/:provider' => 'authentications#error'
   match '/auth/:provider/callback' => 'authentications#create'
   devise_for :users, :controllers => { :registrations => 'registrations', :sessions => 'sessions' }
 
@@ -22,4 +23,6 @@ Locomotive::Application.routes.draw do
     resources :users
     root :to => "categories#index"
   end
+  root :to => "home#index"
 end
+

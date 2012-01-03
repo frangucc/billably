@@ -1,7 +1,7 @@
 class Package < ActiveRecord::Base
   belongs_to :category
   belongs_to :subscription
-  
+
   has_many :images
   has_many :purchases
 
@@ -13,6 +13,7 @@ class Package < ActiveRecord::Base
   validates :price, :presence => true,
     :numericality => {:only_integer => true, :greater_than_or_equal_to => 0}
   validates :name, :presence => true
+  validates_with DateTypeValidator, :fields => [:delivery_date]
 
   private
 
@@ -24,3 +25,4 @@ class Package < ActiveRecord::Base
         number_packages > 2
     end
 end
+

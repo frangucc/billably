@@ -1,12 +1,14 @@
 source :rubygems
 
 gem 'aws-s3'
+gem 'formtastic-bootstrap'
 gem 'bourbon', '~> 1.2.0'
 gem 'capistrano'
 gem 'capistrano-ext'
 gem 'carrierwave'
 gem 'carrierwave_direct'
 gem 'concerned_with'
+gem 'delayed_job'
 gem 'devise'
 gem 'devise_invitable'
 gem 'execjs'
@@ -29,7 +31,6 @@ gem 'plupload-rails'
 gem 'rails', '3.1.3'
 gem 'rake'
 gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git'
-gem 'sass-rails'
 gem 'schedule_atts'
 
 group :assets do
@@ -53,6 +54,11 @@ group :development, :test do
   gem 'timecop', '0.3.5'
 end
 
+group :assets do
+  gem 'bootstrap-sass'
+  gem 'sass-rails'
+end
+
 group :production do
   gem 'pg'
   gem 'seo_meta', :git => 'git://github.com/parndt/seo_meta.git'
@@ -62,3 +68,4 @@ end
 group :test do
   gem 'turn', :require => false
 end
+

@@ -8,4 +8,6 @@ class Subscription < ActiveRecord::Base
   validates :order, :numericality => {:only_integer => true,
     :greater_than_or_equal_to => 0}
   validates :zipcode, :presence => true, :zipcode => true
+  validates_with StringTypeValidator, :fields => [:area]
 end
+

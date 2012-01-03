@@ -5,7 +5,12 @@
   %table{:class => "image"}
     - collection.each do |record|
       %tr
-        %td= image_tag(record.attachment.url)
+        %td
+          - if record.processing
+            Image is being processed
+          - else
+            = image_tag(record.attachment.url)
+
         %td= record.updated_at.to_s(:short)
         %td= record.created_at.to_s(:short)
         %td

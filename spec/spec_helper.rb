@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'capybara/rspec'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
@@ -20,13 +21,14 @@ module RspecHelpers
       host! 'example.com' rescue NameError
     end
   end
-
 end
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include RspecHelpers
+  config.include Devise::TestHelpers, :type => :controller
   config.infer_base_class_for_anonymous_controllers = false
   config.mock_with :rspec
   config.use_transactional_fixtures = true
 end
+

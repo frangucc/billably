@@ -1,9 +1,10 @@
 # encoding: utf-8
 require 'carrierwave/processing/mime_types'
-
+ 
 class AttachmentUploader < CarrierWave::Uploader::Base
   include CarrierWaveDirect::Uploader
-
+  #include CarrierWave::Delayed::Job # New
+  #include CarrierWave::FFMPEG
   #Include RMagick or MiniMagick support:
   #include CarrierWave::RMagick
   #include CarrierWave::MiniMagick
@@ -33,7 +34,9 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process :scale => [50, 50]
   # end
-
+  #version :bitrate_128k do
+    #process :resample => "128k"
+  #end
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   #def extension_white_list

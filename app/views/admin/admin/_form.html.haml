@@ -1,20 +1,18 @@
-%table
-  = semantic_form_for([:admin, resource],
-              :url => resource.new_record? ? collection_url : resource_url(resource),
-              :html => {:multipart => true, :method => (resource.new_record? ? "post" : "put") }) do |f|
-    - if resource.errors.any?
-      %tr
-        %td{:colspan => "2"}
-          %h2
-            = pluralize(resource.errors.count, "error")
-            prohibited this testa from being saved:
-          %ul
-            - resource.errors.full_messages.each do |msg|
-              %li= msg
-    - resource.attributes.each do |field, value|
-      - next unless @showed_columns.include?(field)
-      %tr
-        %td= f.input field.gsub(/\_id$/,'').to_sym
+= semantic_form_for([:admin, resource],
+            :url => resource.new_record? ? collection_url : resource_url(resource),
+            :html => {:multipart => true, :method => (resource.new_record? ? "post" : "put") }) do |f|
+  - if resource.errors.any?
     %tr
-      %td
-      %td= f.submit
+      %td{:colspan => "2"}
+        %h2
+          = pluralize(resource.errors.count, "error")
+          prohibited this testa from being saved:
+        %ul
+          - resource.errors.full_messages.each do |msg|
+            %li= msg
+  - resource.attributes.each do |field, value|
+    - next unless @showed_columns.include?(field)
+    = f.input field.gsub(/\_id$/,'').to_sym
+  = f.buttons do
+    = f.commit_button :button_html => {:class => "primary"}
+

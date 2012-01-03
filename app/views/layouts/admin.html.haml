@@ -1,13 +1,13 @@
 !!! 5
 %html
   %head
-    %title Realvolve
-    = stylesheet_link_tag "application"
+    %title BILLABLY
+    = stylesheet_link_tag "application", "admin"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
-    #header
-      #nav
+  %body.container
+    #header.row
+      #nav.span4.offset12
         %ul
           - if current_user
             %li= current_user.username
@@ -20,15 +20,15 @@
           .message{ :class => key }
             %p= value
       #sub-nav
-        %ul
-          %li= link_to "Categories", admin_categories_path
-          %li= link_to "Merchants", admin_merchants_path
-          %li= link_to "Packages", admin_packages_path
-          %li= link_to "Purchases", admin_purchases_path
-          %li= link_to "Subscriptions", admin_subscriptions_path
-          %li= link_to "Users", admin_users_path
+        %ul.tabs
+          %li{:class => tab_class('categories')}= link_to "Categories", admin_categories_path
+          %li{:class => tab_class('merchants')}= link_to "Merchants", admin_merchants_path
+          %li{:class => tab_class('packages')}= link_to "Packages", admin_packages_path
+          %li{:class => tab_class('purchases')}= link_to "Purchases", admin_purchases_path
+          %li{:class => tab_class('subscriptions')}= link_to "Subscriptions", admin_subscriptions_path
+          %li{:class => tab_class('users')}= link_to "Users", admin_users_path
     #main
       = yield
     #footer
-      /= javascript_include_tag "application"
       = yield :javascript_footer
+
