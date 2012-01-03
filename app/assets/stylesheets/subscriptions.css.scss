@@ -1,0 +1,47 @@
+@import "shared.css.scss";
+
+.subscriptions-controller {
+  h1.main {
+    margin-bottom: 1em;
+  }
+  section.main section {
+    overflow: auto;
+    padding: 20px;
+    border: 1px solid #d0d6d7;
+    background-color: #fff;
+    margin-bottom: 1em;
+  }
+  .name,
+  .shipping,
+  .configure {
+    float: left;
+    width: 30%;
+  }
+  .name {
+    img {
+      // TODO: Remove this fixed width when the dynamic image is available
+      width: 106px;
+      float: left;
+      margin-right: 1em;
+    }
+    .info {
+      float: left;
+      .details {
+        overflow: auto;
+        margin-bottom: 2px;
+      }
+    }
+    .buttontrack {
+      margin: 0;
+    }
+  }
+  .shipping {
+    color: #717474;
+    dt {
+      font-weight: bold;
+    }
+  }
+  .configure .btn {
+    width: 10em;
+  }
+}

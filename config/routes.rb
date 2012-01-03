@@ -1,6 +1,4 @@
 Locomotive::Application.routes.draw do
-  get "home/index"
-
   devise_for :users, :controllers => {
     :registrations => 'registrations',
     :sessions      => 'sessions' }
@@ -24,6 +22,7 @@ Locomotive::Application.routes.draw do
   resources :categories, :only => [:index, :show]
   resources :clubs, :only => [:index, :show]
   resources :payments, :only => [:index]
+  resources :subscriptions, :only => [:index, :show, :mine]
   resources :users
 
   root :to => "home#index"
