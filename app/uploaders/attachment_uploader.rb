@@ -2,20 +2,21 @@
 require 'carrierwave/processing/mime_types'
  
 class AttachmentUploader < CarrierWave::Uploader::Base
-  include CarrierWaveDirect::Uploader
-  #include CarrierWave::Delayed::Job # New
-  #include CarrierWave::FFMPEG
   #Include RMagick or MiniMagick support:
   #include CarrierWave::RMagick
   #include CarrierWave::MiniMagick
   # Choose what kind of storage to use for this uploader:
   #storage :file
-  storage :fog
+  #storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    unless Rails.env.test?
+      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    else
+      "#{Rails.root}/spec/support/uploads/#{model.class.to_s.underscore}/#{model.id}"
+    end
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

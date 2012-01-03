@@ -17,7 +17,7 @@ module Admin::ImagesHelper
     options[:button_text] ||= 'Select File'
     options[:stored_folder] ||= 'attachment'
     id = options[:id] ? "_#{options[:id]}" : ''
-    folder = UUID.generate
+    folder = ActiveSupport::SecureRandom.hex(10)
 
     policy = Base64.encode64(
       "{'expiration': '#{options[:expiration_date]}',
