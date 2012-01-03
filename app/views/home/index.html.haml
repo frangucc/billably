@@ -3,7 +3,8 @@
 %section.main-content
   %div.main-img-wrapper
     = image_tag('content/bread.png', :alt => "Product name", :class => "main-img")
-    = link_to("Merchant Details", "#", :class => "btn tertiary")
+    %div.btn-wrapper
+      = link_to("Merchant Details", "#", :class => "btn tertiary")
 
   = image_tag('content/user.png', :alt => "Username", :class => "user-img")
 

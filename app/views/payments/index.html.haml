@@ -1,5 +1,8 @@
 %section.main-content
   %h1.main= "Create an account"
+  %div.fb
+    %p= "Or login with "
+    = image_tag("content/fb-login.png")
   %form
     %fieldset
       %legend= "Personal Information"
@@ -58,33 +61,17 @@
   %h1.main= "Payment FAQ"
   %ul
     %li
-      %h2= link_to("What", "#")
-      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+      %h2= link_to("What happens after I buy?", "#", :rel => "answer-1", :class => "drill-down")
+      %div#answer-1.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
     %li
-      %h2= link_to("What", "#")
-      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+      %h2= link_to("What if I buy as a gift", "#", :rel => "answer-2", :class => "drill-down")
+      %div#answer-2.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
     %li
-      %h2= link_to("What", "#")
-      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
+      %h2= link_to("Can I change or cancel my purchase?", "#", :rel => "answer-3", :class => "drill-down question-3")
+      %div#answer-3.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit" 
     %li
-      %h2= link_to("What", "#")
-      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
-    %li
-      %h2= link_to("What", "#")
-      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
-    %li
-      %h2= link_to("What", "#")
-      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
-    %li
-      %h2= link_to("What", "#")
-      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
-    %li
-      %h2= link_to("What", "#")
-      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
-    %li
-      %h2= link_to("What", "#")
-      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
-    %li
-      %h2= link_to("What", "#")
-      %div.answer.hidden= "Lorem ipsum dolor sit amet consecteur adipliscing elit"
-
+      %h2= link_to("Is this safe?", "#", :rel => "answer-4", :class => "drill-down question-4")
+      %div#answer-4.hidden
+        %p= "Nothing is more important to us than treating our customers well."
+        %p= "If you ever feel like Billably let you down, give us a call and we'll return your purchase - simple as that."
+  = image_tag("content/security.png")
