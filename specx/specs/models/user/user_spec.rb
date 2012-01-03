@@ -7,6 +7,7 @@ app_require 'app/models/user/user_active_record'
 
 describe User do
   describe "Associations" do
+    it { should have_many :authentications }
     it { should have_many(:packages).through(:purchases) }
     it { should have_many :purchases }
   end
