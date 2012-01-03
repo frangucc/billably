@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120103194855) do
+ActiveRecord::Schema.define(:version => 20120103233522) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -302,12 +302,20 @@ ActiveRecord::Schema.define(:version => 20120103194855) do
   create_table "subscriptions", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "area",                       :null => false
+    t.string   "area",                                    :null => false
     t.boolean  "featured"
-    t.integer  "merchant_id",                :null => false
-    t.string   "name",                       :null => false
-    t.integer  "order",       :default => 0
-    t.string   "zipcode",                    :null => false
+    t.integer  "merchant_id",                             :null => false
+    t.string   "name",                                    :null => false
+    t.integer  "order",                    :default => 0
+    t.string   "zipcode",                                 :null => false
+    t.text     "long_description"
+    t.text     "fine_print"
+    t.integer  "shipping_radius_in_miles"
+    t.boolean  "ships_nationally"
+    t.string   "offering"
+    t.string   "shipping_info"
+    t.boolean  "refundable"
+    t.string   "etc"
   end
 
   add_index "subscriptions", ["featured"], :name => "index_subscriptions_on_featured"
