@@ -1,15 +1,14 @@
 class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   concerned_with :user_active_record
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  has_many :authentications
+    :recoverable, :rememberable, :trackable, :validatable
 
   def self.find_for_authentication(conditions={})
-    user      = find(:first, :conditions => conditions)
+    user = find(:first, :conditions => conditions)
   end
 
   def apply_omniauth(omniauth)

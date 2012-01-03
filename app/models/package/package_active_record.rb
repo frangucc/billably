@@ -2,6 +2,7 @@ class Package < ActiveRecord::Base
   belongs_to :category
   belongs_to :subscription
 
+  has_one :schedule
   has_many :images
   has_many :purchases
 

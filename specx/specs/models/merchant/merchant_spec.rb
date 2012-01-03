@@ -9,6 +9,7 @@ app_require 'app/models/package/package_active_record'
 
 describe Merchant do
   describe "Associations" do
+    it { should have_many :images }
     it { should have_many(:packages).through(:subscriptions) }
     it { should have_many :subscriptions }
   end

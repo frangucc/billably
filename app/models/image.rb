@@ -1,7 +1,8 @@
-require "#{Rails.root}/lib/jobs/image_job.rb"
+require "#{Rails.root.to_s}/lib/jobs/image_job.rb"
+
 class Image < ActiveRecord::Base
   concerned_with :image_active_record, :image_upload
-  
+
   def self.process_in_background(image, path)
     image.remote_attachment_url = path
     image.processing = false
