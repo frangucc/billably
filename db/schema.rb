@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111221050201) do
+ActiveRecord::Schema.define(:version => 20111230041258) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -36,11 +36,44 @@ ActiveRecord::Schema.define(:version => 20111221050201) do
   add_index "categories", ["featured"], :name => "index_categories_on_featured"
   add_index "categories", ["order"], :name => "index_categories_on_order"
 
-  create_table "i_calendars", :force => true do |t|
-    t.text     "schedule_yaml", :null => false
+  create_table "chargifies", :force => true do |t|
+    t.text     "schedule_yaml"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "code"
+    t.text     "description"
+    t.datetime "archived_at"
+    t.integer  "expiration_interval"
+    t.string   "expiration_interval_unit"
+    t.integer  "initial_charge_in_cents"
+    t.integer  "interval"
+    t.string   "interval_unit"
+    t.integer  "price_in_cents"
+    t.boolean  "request_credit_card"
+    t.boolean  "require_credit_card"
+    t.string   "return_params"
+    t.string   "return_url"
+    t.integer  "trial_interval"
+    t.integer  "trial_price_in_cents"
+    t.string   "trial_interval_unit"
+    t.string   "update_return_url"
+  end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "images", :force => true do |t|
     t.string   "attachment"
@@ -48,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20111221050201) do
     t.integer  "merchant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "processing",  :default => false
   end
 
   create_table "merchants", :force => true do |t|
@@ -84,6 +118,8 @@ ActiveRecord::Schema.define(:version => 20111221050201) do
     t.string   "card_number"
     t.integer  "billing_id"
     t.integer  "serving_id"
+    t.text     "schedule_yaml"
+    t.integer  "chargify_id"
   end
 
   add_index "purchases", ["package_id"], :name => "index_purchases_on_package_id"
