@@ -3,6 +3,6 @@ class Admin::MerchantsController < Admin::AdminController
 
   private
   def showed_columns
-    @showed_columns ||= ['email', 'name', 'zipcode', 'featured']
+    @showed_columns ||= ['email', 'name', 'zipcode', 'featured', 'city', 'state']
   end
 end
