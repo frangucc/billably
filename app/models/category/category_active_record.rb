@@ -1,5 +1,4 @@
 class Category < ActiveRecord::Base
-  has_many :packages
   has_many :categorizations
   has_many :subscriptions, through: :categorizations
 
