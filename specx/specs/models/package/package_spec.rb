@@ -19,18 +19,26 @@ describe Package do
   end
 
   describe 'Database Columns' do
+    it { should have_db_column(:customer_cost).of_type(:integer) }
     it { should have_db_column(:delivery_date).of_type(:date) }
+    it { should have_db_column(:description).of_type(:text) }
     it { should have_db_column(:frequency).of_type(:integer) }
-    it { should have_db_column(:price).of_type(:integer) }
     it { should have_db_column(:name).of_type(:string) }
+    it { should have_db_column(:our_cost).of_type(:integer) }
     it { should have_db_column(:subscription_id).of_type(:integer) }
   end
 
   describe 'Validations' do
+    it { should validate_presence_of :customer_cost }
     it { should validate_presence_of :delivery_date }
+    it { should validate_presence_of :description }
     it { should validate_presence_of :frequency }
-    it { should validate_presence_of :price }
     it { should validate_presence_of :name }
+
+    it { should allow_value(0).for(:customer_cost) }
+    it { should_not allow_value(-1).for(:customer_cost) }
+    it { should_not allow_value(1.7).for(:customer_cost) }
+    it { should_not allow_value('1.7').for(:customer_cost) }
 
     it { should_not allow_value(Time.now).for(:delivery_date) }
 
@@ -41,8 +49,9 @@ describe Package do
     it { should_not allow_value('').for(:name) }
     it { should_not allow_value(' ').for(:name) }
 
-    it { should allow_value(0).for(:price) }
-    it { should_not allow_value(-1).for(:price) }
-    it { should_not allow_value(1.7).for(:price) }
+    it { should allow_value(0).for(:our_cost) }
+    it { should_not allow_value(-1).for(:our_cost) }
+    it { should_not allow_value(1.7).for(:our_cost) }
+    it { should_not allow_value('1.7').for(:our_cost) }
   end
 end

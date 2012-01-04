@@ -6,6 +6,9 @@ class Package < ActiveRecord::Base
 
   validate :limit_three_in_subscription
   validates :delivery_date, :presence => true
+  validates :description, :presence => true
+  validates :frequency, :presence => true,
+    :numericality => {:only_integer => true, :greater_than => 0}
   validates :our_cost, :presence => true,
     :numericality => {:only_integer => true, :greater_than_or_equal_to => 0}
   validates :customer_cost, :presence => true,
@@ -24,4 +27,3 @@ class Package < ActiveRecord::Base
         number_packages > 2
     end
 end
-

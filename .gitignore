@@ -34,6 +34,7 @@ public/stylesheets/cache
 public/system/*
 public/themes/*
 refinerycms-*.gem
+spec/support/
 tmp
 tmp/
 tmp/**/*

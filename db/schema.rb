@@ -108,11 +108,10 @@ ActiveRecord::Schema.define(:version => 20120104182830) do
     t.datetime "updated_at"
     t.date     "delivery_date",   :null => false
     t.integer  "frequency",       :null => false
-    t.integer  "price",           :null => false
     t.string   "name",            :null => false
     t.integer  "subscription_id"
-    t.float    "our_cost"
-    t.float    "customer_cost"
+    t.integer  "our_cost"
+    t.integer  "customer_cost"
     t.text     "description"
   end
 
