@@ -39,20 +39,4 @@ describe Image do
       end
     end
   end
-
-  describe 'Validations' do
-    describe 'should validate that either merchant or package exist' do
-      it 'validates merchant exists' do
-        pending
-      end
-
-      it 'validates merchant exists' do
-        pending
-      end
-
-      it 'fails if neither exist' do
-        pending
-      end
-    end
-  end
 end

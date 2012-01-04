@@ -1,6 +1,6 @@
 = semantic_form_for([:admin, resource],
-            :url => resource.new_record? ? collection_url : resource_url(resource),
-            :html => {:multipart => true, :method => (resource.new_record? ? "post" : "put") }) do |f|
+  :url => resource.new_record? ? collection_url : resource_url(resource),
+    :html => {:multipart => true, :method => (resource.new_record? ? "post" : "put") } ) do |f|
   - if resource.errors.any?
     %tr
       %td{:colspan => "2"}
@@ -38,20 +38,13 @@
     %ul.inputs-list
       - @categories.each do |category|
         %li
-          = check_box_tag "subscription[category_ids][]", category.id, @subscription.category_ids.include?(category.id), id: dom_id(category)
+          = check_box_tag "subscription[category_ids][]", category.id,
+            @subscription.category_ids.include?(category.id), id: dom_id(category)
           = label_tag dom_id(category), category.name
 
-  -#
-    %fieldset
-      %legend= "Packages"
-      - f.fields_for :package do |builder|
-        = builder.input :delivery_date
-        = builder.input :name
-        = builder.input :our_cost
-        = builder.input :customer_cost
-        = builder.input :description
-        = builder.check_box :_destroy
-        = builder.label :_destroy, "Remove Package"
+  %fieldset
+    %legend= "Packages"
+    = f.inputs :name => "Package #%i", :for => :packages
 
   = f.input :etc
 

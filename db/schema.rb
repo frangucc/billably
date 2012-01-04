@@ -107,6 +107,8 @@ ActiveRecord::Schema.define(:version => 20120104182830) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "delivery_date",   :null => false
+    t.integer  "frequency",       :null => false
+    t.integer  "price",           :null => false
     t.string   "name",            :null => false
     t.integer  "subscription_id"
     t.float    "our_cost"
@@ -324,6 +326,7 @@ ActiveRecord::Schema.define(:version => 20120104182830) do
     t.string   "shipping_info"
     t.boolean  "refundable",               :default => false
     t.string   "etc"
+    t.boolean  "ships_internationally",    :default => false
   end
 
   add_index "subscriptions", ["featured"], :name => "index_subscriptions_on_featured"
