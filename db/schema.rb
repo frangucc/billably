@@ -308,19 +308,20 @@ ActiveRecord::Schema.define(:version => 20120104143946) do
   create_table "subscriptions", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "area",                                    :null => false
+    t.string   "area",                                        :null => false
     t.boolean  "featured"
-    t.integer  "merchant_id",                             :null => false
-    t.string   "name",                                    :null => false
+    t.integer  "merchant_id",                                 :null => false
+    t.string   "name",                                        :null => false
     t.integer  "order",                    :default => 0
-    t.string   "zipcode",                                 :null => false
-    t.text     "long_description"
+    t.string   "zipcode",                                     :null => false
+    t.text     "blurb"
+    t.text     "description"
     t.text     "fine_print"
     t.integer  "shipping_radius_in_miles"
     t.boolean  "ships_nationally"
     t.string   "offering"
     t.string   "shipping_info"
-    t.boolean  "refundable"
+    t.boolean  "refundable",               :default => false
     t.string   "etc"
   end
 

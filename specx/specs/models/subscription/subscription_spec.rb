@@ -16,10 +16,11 @@ describe Subscription do
 
   describe 'Database Columns' do
     it { should have_db_column(:area).of_type(:string) }
+    it { should have_db_column(:blurb).of_type(:text) }
     it { should have_db_column(:etc).of_type(:string) }
     it { should have_db_column(:fine_print).of_type(:text) }
     it { should have_db_column(:featured).of_type(:boolean) }
-    it { should have_db_column(:long_description).of_type(:text) }
+    it { should have_db_column(:description).of_type(:text) }
     it { should have_db_column(:merchant_id).of_type(:integer) }
     it { should have_db_column(:name).of_type(:string) }
     it { should have_db_column(:offering).of_type(:string) }
@@ -34,6 +35,7 @@ describe Subscription do
 
   describe 'Validations' do
     it { should validate_presence_of :area }
+    it { should validate_presence_of :description }
     it { should validate_presence_of :merchant }
     it { should validate_presence_of :name }
     it { should validate_presence_of :zipcode }

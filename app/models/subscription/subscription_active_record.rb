@@ -4,6 +4,7 @@ class Subscription < ActiveRecord::Base
 
   validate :at_least_one_category
   validates :area, :presence => true
+  validates :description, :presence => true
   validates :merchant, :presence => true
   validates :name, :presence => true
   validates :order, :numericality => {:only_integer => true,
