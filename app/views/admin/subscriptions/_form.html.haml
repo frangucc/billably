@@ -42,9 +42,7 @@
             @subscription.category_ids.include?(category.id), id: dom_id(category)
           = label_tag dom_id(category), category.name
 
-  %fieldset
-    %legend= "Packages"
-    = f.inputs :name => "Package #%i", :for => :packages
+  = f.inputs :name, :description, :our_cost, :customer_cost, :delivery_date, :name => "Package #%i", :for => :packages
 
   = f.input :etc
 
