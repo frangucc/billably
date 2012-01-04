@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104143946) do
+ActiveRecord::Schema.define(:version => 20120104182830) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -107,10 +107,11 @@ ActiveRecord::Schema.define(:version => 20120104143946) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "delivery_date",   :null => false
-    t.integer  "frequency",       :null => false
-    t.integer  "price",           :null => false
     t.string   "name",            :null => false
     t.integer  "subscription_id"
+    t.float    "our_cost"
+    t.float    "customer_cost"
+    t.text     "description"
   end
 
   add_index "packages", ["subscription_id"], :name => "index_packages_on_subscription_id"
