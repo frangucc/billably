@@ -36,12 +36,13 @@ ActiveRecord::Schema.define(:version => 20120104143946) do
   add_index "categories", ["featured"], :name => "index_categories_on_featured"
   add_index "categories", ["order"], :name => "index_categories_on_order"
 
-  create_table "categorizations", :force => true do |t|
-    t.integer  "category_id"
-    t.integer  "subscription_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "categories_subscriptions", :force => true do |t|
+    t.integer "category_id"
+    t.integer "subscription_id"
   end
+
+  add_index "categories_subscriptions", ["category_id"], :name => "index_categories_subscriptions_on_category_id"
+  add_index "categories_subscriptions", ["subscription_id"], :name => "index_categories_subscriptions_on_subscription_id"
 
   create_table "chargifies", :force => true do |t|
     t.text     "schedule_yaml"
@@ -105,7 +106,6 @@ ActiveRecord::Schema.define(:version => 20120104143946) do
   create_table "packages", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id",     :null => false
     t.date     "delivery_date",   :null => false
     t.integer  "frequency",       :null => false
     t.integer  "price",           :null => false
@@ -113,7 +113,6 @@ ActiveRecord::Schema.define(:version => 20120104143946) do
     t.integer  "subscription_id"
   end
 
-  add_index "packages", ["category_id"], :name => "index_packages_on_category_id"
   add_index "packages", ["subscription_id"], :name => "index_packages_on_subscription_id"
 
   create_table "purchases", :force => true do |t|
@@ -309,19 +308,20 @@ ActiveRecord::Schema.define(:version => 20120104143946) do
   create_table "subscriptions", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "area",                                    :null => false
+    t.string   "area",                                        :null => false
     t.boolean  "featured"
-    t.integer  "merchant_id",                             :null => false
-    t.string   "name",                                    :null => false
+    t.integer  "merchant_id",                                 :null => false
+    t.string   "name",                                        :null => false
     t.integer  "order",                    :default => 0
-    t.string   "zipcode",                                 :null => false
-    t.text     "long_description"
+    t.string   "zipcode",                                     :null => false
+    t.text     "blurb"
+    t.text     "description"
     t.text     "fine_print"
     t.integer  "shipping_radius_in_miles"
     t.boolean  "ships_nationally"
     t.string   "offering"
     t.string   "shipping_info"
-    t.boolean  "refundable"
+    t.boolean  "refundable",               :default => false
     t.string   "etc"
   end
 
