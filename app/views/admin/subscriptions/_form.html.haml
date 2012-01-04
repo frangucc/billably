@@ -11,6 +11,10 @@
           - resource.errors.full_messages.each do |msg|
             %li= msg
 
+  %div.clearfix
+    = f.label :is_active
+    %div.input= f.check_box :is_active
+
   = f.input :merchant
   = f.input :name
   = f.input :order

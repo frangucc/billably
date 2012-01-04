@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104182830) do
+ActiveRecord::Schema.define(:version => 20120104204037) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -326,6 +326,7 @@ ActiveRecord::Schema.define(:version => 20120104182830) do
     t.boolean  "refundable",               :default => false
     t.string   "etc"
     t.boolean  "ships_internationally",    :default => false
+    t.boolean  "is_active"
   end
 
   add_index "subscriptions", ["featured"], :name => "index_subscriptions_on_featured"
