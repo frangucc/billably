@@ -14,3 +14,10 @@
   %tr
     %th= "Categories"
     %td= resource.categories.collect{|c| c.name}.join(', ')
+
+  %tr
+    %th= "Packages"
+    %td
+      %ul
+        - for package in resource.packages %>
+          %li= h package.name

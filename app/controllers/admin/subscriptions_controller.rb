@@ -9,4 +9,9 @@ class Admin::SubscriptionsController < Admin::AdminController
         shipping_info shipping_radius_in_miles ships_nationally zipcode )
       @categories = Category.all
     end
+
+    #def new
+      #@subscription = Subscription.new
+      #3.times { @subscription.packages.build }
+    #end
 end

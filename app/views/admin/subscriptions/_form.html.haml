@@ -41,6 +41,18 @@
           = check_box_tag "subscription[category_ids][]", category.id, @subscription.category_ids.include?(category.id), id: dom_id(category)
           = label_tag dom_id(category), category.name
 
+  -#
+    %fieldset
+      %legend= "Packages"
+      - f.fields_for :package do |builder|
+        = builder.input :delivery_date
+        = builder.input :name
+        = builder.input :our_cost
+        = builder.input :customer_cost
+        = builder.input :description
+        = builder.check_box :_destroy
+        = builder.label :_destroy, "Remove Package"
+
   = f.input :etc
 
   = f.buttons do
