@@ -9,7 +9,7 @@ describe Subscription do
     it 'should not permit the list of categories to be empty' do
       s = build :subscription, :categories => []
       s.valid?.should == false
-      s.errors.messages[:categories].should == 'cannot be empty'
+      s.errors.messages[:categories].should == ['cannot be empty']
       s.categories << create(:category)
       s.valid?.should == true
     end
