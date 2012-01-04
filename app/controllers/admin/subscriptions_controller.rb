@@ -1,8 +1,12 @@
-class Admin::SubscriptionsController < Admin::AdminController 
+class Admin::SubscriptionsController < Admin::AdminController
   inherit_resources
 
   private
-  def showed_columns
-    @showed_columns ||= ['area', 'featured', 'merchant_id', 'name', 'long_description', 'fine_print', 'shipping_radius_in_miles', 'ships_nationally', 'order', 'zipcode', 'offering', 'shipping_info', 'refundable', 'etc']
-  end
+
+    def showed_columns
+      %w(
+        area etc featured fine_print long_description
+        merchant_id name offering order refundable
+        shipping_info shipping_radius_in_miles ships_nationally zipcode )
+    end
 end

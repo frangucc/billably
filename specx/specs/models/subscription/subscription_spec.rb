@@ -16,10 +16,19 @@ describe Subscription do
 
   describe 'Database Columns' do
     it { should have_db_column(:area).of_type(:string) }
+    it { should have_db_column(:etc).of_type(:string) }
+    it { should have_db_column(:fine_print).of_type(:text) }
     it { should have_db_column(:featured).of_type(:boolean) }
+    it { should have_db_column(:long_description).of_type(:text) }
     it { should have_db_column(:merchant_id).of_type(:integer) }
     it { should have_db_column(:name).of_type(:string) }
+    it { should have_db_column(:offering).of_type(:string) }
     it { should have_db_column(:order).of_type(:integer) }
+    it { should have_db_column(:refundable).of_type(:boolean) }
+    it { should have_db_column(:shipping_info).of_type(:string) }
+    it { should have_db_column(:shipping_radius_in_miles).of_type(:integer) }
+    it { should have_db_column(:refundable).of_type(:boolean) }
+    it { should have_db_column(:ships_nationally).of_type(:boolean) }
     it { should have_db_column(:zipcode).of_type(:string) }
   end
 
