@@ -29,6 +29,7 @@ describe Subscription do
     it { should have_db_column(:shipping_info).of_type(:string) }
     it { should have_db_column(:shipping_radius_in_miles).of_type(:integer) }
     it { should have_db_column(:refundable).of_type(:boolean) }
+    it { should have_db_column(:ships_internationally).of_type(:boolean) }
     it { should have_db_column(:ships_nationally).of_type(:boolean) }
     it { should have_db_column(:zipcode).of_type(:string) }
   end
@@ -52,6 +53,11 @@ describe Subscription do
     it { should_not allow_value(-1).for(:order) }
     it { should_not allow_value(9.2).for(:order) }
 
+    it { should allow_value(1).for(:shipping_radius_in_miles) }
+    it { should_not allow_value(0).for(:shipping_radius_in_miles) }
+    it { should_not allow_value(-1).for(:shipping_radius_in_miles) }
+    it { should_not allow_value('abc').for(:shipping_radius_in_miles) }
+
     it { should allow_value('12345').for(:zipcode) }
     it { should allow_value('12345-6789').for(:zipcode) }
     it { should_not allow_value('1234').for(:zipcode) }
@@ -59,4 +65,3 @@ describe Subscription do
     it { should_not allow_value(12345).for(:zipcode) }
   end
 end
-
