@@ -1,0 +1,48 @@
+= semantic_form_for([:admin, resource],
+            :url => resource.new_record? ? collection_url : resource_url(resource),
+            :html => {:multipart => true, :method => (resource.new_record? ? "post" : "put") }) do |f|
+  - if resource.errors.any?
+    %tr
+      %td{:colspan => "2"}
+        %h2
+          = pluralize(resource.errors.count, "error")
+          prohibited this testa from being saved:
+        %ul
+          - resource.errors.full_messages.each do |msg|
+            %li= msg
+
+  = f.input :merchant
+  = f.input :name
+  = f.input :order
+  = f.input :zipcode
+  = f.input :long_description
+  = f.input :fine_print
+  = f.input :shipping_radius_in_miles
+  = f.input :shipping_info
+  = f.input :area
+
+  %div.clearfix
+    = f.label :ships_nationally
+    %div.input= f.check_box :ships_nationally
+
+  %div.clearfix
+    = f.label :refundable
+    %div.input= f.check_box :refundable
+
+  %div.clearfix
+    = f.label :featured
+    %div.input= f.check_box :featured
+
+  = label_tag "Categories"
+  %div.input
+    %ul.inputs-list
+      - @categories.each do |category|
+        %li
+          = check_box_tag "subscription[category_ids][]", category.id, @subscription.category_ids.include?(category.id), id: dom_id(category)
+          = label_tag dom_id(category), category.name
+
+  = f.input :etc
+
+  = f.buttons do
+    = f.commit_button :button_html => {:class => "primary"}
+

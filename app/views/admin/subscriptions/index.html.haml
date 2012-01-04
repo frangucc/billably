@@ -1,0 +1,24 @@
+%p= link_to "New #{resource_class}", new_resource_url
+- unless collection.any?
+  %p This is empty
+- else
+  %table{:class => "User"}
+    %tr
+      %th Subscription
+      %th Merchant
+      %th Featured
+      %th Zipcode
+      %th Area
+      %th Action
+    - collection.each do |record|
+      %tr
+        %td= record.name
+        %td= record.merchant.name
+        %td= record.featured
+        %td= record.zipcode
+        %td= record.area
+        %td
+          = link_to "Show", resource_url(record)
+          = link_to "Edit", edit_resource_url(record)
+          = link_to "Delete", resource_url(record), :confirm => "Are you sure you want to delete it?", :method => :delete
+

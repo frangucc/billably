@@ -1,0 +1,16 @@
+%table{:class => "#{collection.first.class.to_s.downcase} detail"}
+  - if controller_name == "organizations"
+    = render "organizations/more_info"
+  - resource.attributes.each_pair do |attr, value|
+    - next if ['id', 'created_at', 'updated_at'].include?(attr)
+    %tr
+      %th= attr.titleize
+      - strip_attr = attr.gsub(/\_id$/,'')
+      %td
+        - if strip_attr != attr && resource.respond_to?(strip_attr)
+          = link_to (resource.send(strip_attr).try(:name) || value), eval("admin_#{strip_attr}_path(#{value})")
+        - else
+          = value
+  %tr
+    %th= "Categories"
+    %td= resource.categories.collect{|c| c.name}.join(', ')

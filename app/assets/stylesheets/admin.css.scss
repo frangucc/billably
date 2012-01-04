@@ -18,3 +18,16 @@ h3.form_title {
   margin-left: 150px;
   margin-bottom: 20px;
 }
+.input input[type="radio"],
+.input input[type="checkbox"] {
+  margin-top: 10px;
+}
+.inputs-list {
+  input[type="radio"], 
+  input[type="checkbox"] {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
+
