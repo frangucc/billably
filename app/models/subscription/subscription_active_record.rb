@@ -1,6 +1,8 @@
 class Subscription < ActiveRecord::Base
   belongs_to :merchant
   has_many :packages
+  has_many :categorizations
+  has_many :categories, through: :categorizations
 
   validates :area, :presence => true
   validates :merchant, :presence => true

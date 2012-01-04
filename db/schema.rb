@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120103233522) do
+ActiveRecord::Schema.define(:version => 20120104143946) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(:version => 20120103233522) do
 
   add_index "categories", ["featured"], :name => "index_categories_on_featured"
   add_index "categories", ["order"], :name => "index_categories_on_order"
+
+  create_table "categorizations", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "subscription_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "chargifies", :force => true do |t|
     t.text     "schedule_yaml"
