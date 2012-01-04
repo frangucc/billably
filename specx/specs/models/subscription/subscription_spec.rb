@@ -5,13 +5,13 @@ support_require 'database'
 app_require 'lib/validators/string_type_validator'
 app_require 'lib/validators/date_type_validator'
 app_require 'lib/validators/zipcode_validator'
+app_require 'app/models/category/category_active_record'
 app_require 'app/models/subscription/subscription_active_record'
-app_require 'app/models/package/package_active_record'
 
 describe Subscription do
   describe "Associations" do
     it { should belong_to :merchant }
-    it { should have_many :packages }
+    it { should have_and_belong_to_many :categories }
   end
 
   describe 'Database Columns' do

@@ -1,13 +1,10 @@
 class Package < ActiveRecord::Base
-  belongs_to :category
   belongs_to :subscription
-
   has_one :schedule
   has_many :images
   has_many :purchases
 
   validate :limit_three_in_subscription
-  validates :category, :presence => true
   validates :delivery_date, :presence => true
   validates :frequency, :presence => true,
     :numericality => {:only_integer => true, :greater_than => 0}

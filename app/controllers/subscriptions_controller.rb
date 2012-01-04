@@ -7,5 +7,4 @@ class SubscriptionsController < ApplicationController
 
   def mine
   end
-
 end

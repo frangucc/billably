@@ -1,9 +1,8 @@
 class Subscription < ActiveRecord::Base
   belongs_to :merchant
-  has_many :packages
-  has_many :categorizations
-  has_many :categories, through: :categorizations
+  has_and_belongs_to_many :categories
 
+  validate :at_least_one_category
   validates :area, :presence => true
   validates :merchant, :presence => true
   validates :name, :presence => true
@@ -11,5 +10,11 @@ class Subscription < ActiveRecord::Base
     :greater_than_or_equal_to => 0}
   validates :zipcode, :presence => true, :zipcode => true
   validates_with StringTypeValidator, :fields => [:area]
-end
 
+  private
+
+    def at_least_one_category
+      errors.add(:categories, 'cannot be empty') if
+        self.categories.size.zero?
+    end
+end

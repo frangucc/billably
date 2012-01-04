@@ -1,4 +1,5 @@
 --colour
+--debugger
 --format documentation
 -Ispecx
 

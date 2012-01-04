@@ -12,7 +12,6 @@ app_require 'app/models/purchase/purchase_active_record'
 
 describe Package do
   describe "Associations" do
-    it { should belong_to :category }
     it { should belong_to :subscription }
     it { should have_many :images }
     it { should have_many :purchases }
@@ -20,7 +19,6 @@ describe Package do
   end
 
   describe 'Database Columns' do
-    it { should have_db_column(:category_id).of_type(:integer) }
     it { should have_db_column(:delivery_date).of_type(:date) }
     it { should have_db_column(:frequency).of_type(:integer) }
     it { should have_db_column(:price).of_type(:integer) }
@@ -29,7 +27,6 @@ describe Package do
   end
 
   describe 'Validations' do
-    it { should validate_presence_of :category }
     it { should validate_presence_of :delivery_date }
     it { should validate_presence_of :frequency }
     it { should validate_presence_of :price }
