@@ -324,6 +324,7 @@ ActiveRecord::Schema.define(:version => 20120104182830) do
     t.string   "shipping_info"
     t.boolean  "refundable",               :default => false
     t.string   "etc"
+    t.boolean  "ships_internationally",    :default => false
   end
 
   add_index "subscriptions", ["featured"], :name => "index_subscriptions_on_featured"
