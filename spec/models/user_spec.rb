@@ -45,5 +45,10 @@ describe User do
         user.password_required?.should be_false
       end
     end
+
+    it "name should return first + and last name" do
+      user = create :user
+      user.name.should == [user.first_name, user.last_name].compact.join(' ')
+    end
   end
 end

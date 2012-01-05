@@ -13,10 +13,9 @@
     %th= "Categories"
     %td= resource.categories.collect{|c| c.name}.join(', ')
 
-  -if resource.packages.empty?
-    %tr
-      %th= "Packages"
-      %td
-        %ul
-          - for package in resource.packages
-            %li= package.name
+  %tr
+    %th= "Packages"
+    %td
+      %ul
+        - resource.packages.each do |package|
+          %li= h package.name

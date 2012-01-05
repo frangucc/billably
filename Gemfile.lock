@@ -337,6 +337,9 @@ GEM
       multi_json (~> 1.0.4)
       rubyzip
     shoulda (2.11.3)
+    simple_form (1.5.2)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -389,7 +392,6 @@ DEPENDENCIES
   faker
   file-tail
   fog
-  formtastic
   formtastic-bootstrap
   haml
   heroku
@@ -416,6 +418,7 @@ DEPENDENCIES
   schedule_atts
   seo_meta!
   shoulda
+  simple_form
   sqlite3
   therubyracer
   timecop (= 0.3.5)

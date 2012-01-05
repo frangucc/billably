@@ -12,6 +12,10 @@ describe Subscription do
   describe "Associations" do
     it { should belong_to :merchant }
     it { should have_and_belong_to_many :categories }
+    it { should have_and_belong_to_many :states }
+    it { should have_many :images }
+    it { should have_many :packages }
+
   end
 
   describe 'Database Columns' do
@@ -32,6 +36,9 @@ describe Subscription do
     it { should have_db_column(:ships_internationally).of_type(:boolean) }
     it { should have_db_column(:ships_nationally).of_type(:boolean) }
     it { should have_db_column(:zipcode).of_type(:string) }
+    it { should have_db_column(:active).of_type(:boolean).with_options(:default => true) }
+    it { should have_db_column(:activate).of_type(:datetime) }
+    it { should have_db_column(:deactivate).of_type(:datetime) }
   end
 
   describe 'Validations' do

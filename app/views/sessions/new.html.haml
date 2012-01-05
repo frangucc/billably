@@ -1,10 +1,9 @@
 %h2 Sign in
-= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   = f.input :email, :required => false, :autofocus => true
   = f.input :password, :required => false
   = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
-  = f.buttons do
-    = f.commit_button "Sign In", :button_html => {:class => "primary"}
+  = f.submit "Sign In", :class => "primary btn tertiary"
 
 = render :partial => "devise/shared/links"
 

@@ -6,5 +6,6 @@ FactoryGirl.define do
     frequency       { 2 }
     name            { Faker::Name.name  }
     our_cost        { 10 }
+    images  { [FactoryGirl.create(:image)] }
   end
 end

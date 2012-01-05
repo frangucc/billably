@@ -1,8 +1,10 @@
 class Package < ActiveRecord::Base
   belongs_to :subscription
   has_one :schedule
-  has_many :images
+  has_many :images, :as => :imageable
   has_many :purchases
+  
+  accepts_nested_attributes_for :images
 
   validate :limit_three_in_subscription
   validates :delivery_date, :presence => true
@@ -14,6 +16,7 @@ class Package < ActiveRecord::Base
   validates :customer_cost, :presence => true,
     :numericality => {:only_integer => true, :greater_than_or_equal_to => 0}
   validates :name, :presence => true
+  
   validates_with DateTypeValidator, :fields => [:delivery_date]
 
   private
@@ -23,7 +26,7 @@ class Package < ActiveRecord::Base
 
       number_packages = Package.where(["subscription_id = ? AND id <> ?",
         self.subscription_id, self.id.to_i]).count
-      self.errors.add(:base, "limit three packages in subscription") if
+      self.errors.add(:base, "Limit three packages in subscription") if
         number_packages > 2
     end
 end

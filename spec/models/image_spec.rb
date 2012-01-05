@@ -12,10 +12,7 @@ describe Image do
   end
 
   describe "Factory" do
-    it "should be valid" do
-      image = create :image
-      image.valid?.should be_true
-    end
+    it { build(:image).should be_valid }
   end
 
   describe "Instance Methods" do

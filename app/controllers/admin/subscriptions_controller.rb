@@ -6,7 +6,7 @@ class Admin::SubscriptionsController < Admin::AdminController
     3.times { @subscription.packages.build }
     new!
   end
-
+  
   private
 
     def showed_columns

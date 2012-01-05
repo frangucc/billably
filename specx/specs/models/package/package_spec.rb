@@ -26,6 +26,9 @@ describe Package do
     it { should have_db_column(:name).of_type(:string) }
     it { should have_db_column(:our_cost).of_type(:integer) }
     it { should have_db_column(:subscription_id).of_type(:integer) }
+    it { should have_db_column(:active).of_type(:boolean).with_options(:default => true) }
+    it { should have_db_column(:activate).of_type(:datetime) }
+    it { should have_db_column(:deactivate).of_type(:datetime) }
   end
 
   describe 'Validations' do

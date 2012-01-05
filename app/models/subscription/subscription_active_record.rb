@@ -1,7 +1,11 @@
 class Subscription < ActiveRecord::Base
   belongs_to :merchant
   has_and_belongs_to_many :categories
+  has_and_belongs_to_many :states
+  has_many :images, :as => :imageable
   has_many :packages, :dependent => :destroy
+ 
+  accepts_nested_attributes_for :images
   accepts_nested_attributes_for :packages, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
 
   validate :at_least_one_category

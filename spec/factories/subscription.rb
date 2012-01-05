@@ -6,5 +6,6 @@ FactoryGirl.define do
     description   { Faker::Lorem.sentences(2).join ' ' }
     name          { Faker::Name.name }
     zipcode       { '12345' }
+    images        { [FactoryGirl.create(:image)] }
   end
 end

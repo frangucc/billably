@@ -11,6 +11,7 @@ app_require 'app/models/subscription/subscription_active_record'
 describe Category do
   describe "Associations" do
     it { should have_and_belong_to_many :subscriptions }
+    it { should have_one :image }
   end
 
   describe 'Database Columns' do

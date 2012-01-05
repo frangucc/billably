@@ -10,12 +10,11 @@
         %ul
           - resource.errors.full_messages.each do |msg|
             %li= msg
-  - resource.attributes.each do |field, value|
-    - next unless @showed_columns.include?(field)
-    - asso_field = field.gsub(/\_id$/,'').to_sym
-    - if field.to_sym != asso_field && f.object.respond_to?(asso_field)
-      = f.association asso_field
-    - else
-      = f.input field.to_sym
-  = f.submit
-
+  = f.input :delivery_date
+  = f.input :name
+  = f.association :subscription
+  = f.input :our_cost
+  = f.input :customer_cost
+  = f.input :frequency
+  = f.input :description
+  %div.input= f.button :submit, :class => "btn"

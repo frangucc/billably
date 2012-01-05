@@ -1,4 +1,4 @@
-= semantic_form_for [:admin, resource] do |f|
+= simple_form_for [:admin, resource] do |f|
   - if resource.errors.any?
     %tr
       %td{:colspan => "2"}
@@ -17,7 +17,7 @@
       %div#upload_progress_bar.plupload_upload_progress
         %div#plupload-progress-status{:style=> "height: 100%; background: #47B21D; width:1%;"}
   %br
-  = f.submit
+  = f.button :submit, :class => "btn tertiary"
 
 = content_for :javascript_footer do
   = javascript_include_tag 'pluupload.js'

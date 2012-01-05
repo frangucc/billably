@@ -30,4 +30,21 @@ h3.form_title {
   }
 }
 
+abbr[title], dfn[title] {
+  border-bottom: none;
+}
 
+.input.date {
+  select.date {
+    width: 70px;
+  }
+}
+.fields-for-package {
+  margin: 10px 0px
+}
+div.input {
+  padding: 5px 0;
+  label {
+    padding-right: 10px;
+  }
+}

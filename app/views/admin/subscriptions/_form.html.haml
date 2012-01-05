@@ -1,4 +1,4 @@
-= semantic_form_for([:admin, resource],
+= simple_form_for([:admin, resource],
   :url => resource.new_record? ? collection_url : resource_url(resource),
     :html => {:multipart => true, :method => (resource.new_record? ? "post" : "put") } ) do |f|
   - if resource.errors.any?
@@ -15,25 +15,26 @@
     = f.label :is_active
     %div.input= f.check_box :is_active
 
-  = f.input :merchant
+  = f.association :merchant
   = f.input :name
   = f.input :order
   = f.input :zipcode
+  = f.association :states
   = f.input :description
   = f.input :fine_print
   = f.input :shipping_radius_in_miles
   = f.input :shipping_info
   = f.input :area
 
-  %div.clearfix
+  %div.input.clearfix
     = f.label :ships_nationally
     %div.input= f.check_box :ships_nationally
 
-  %div.clearfix
+  %div.input.clearfix
     = f.label :refundable
     %div.input= f.check_box :refundable
 
-  %div.clearfix
+  %div.input.clearfix
     = f.label :featured
     %div.input= f.check_box :featured
 
@@ -48,8 +49,18 @@
 
   = f.inputs :name, :description, :our_cost, :customer_cost, :delivery_date, :name => "Package #%i", :for => :packages
 
+  %fieldset
+    %legend= "Packages"
+    = f.simple_fields_for :packages do |fp|
+      %div.fields-for-package
+        = fp.input :delivery_date, :as => :date
+        = fp.input :frequency
+        = fp.input :name
+        = fp.input :our_cost
+        = fp.input :customer_cost
+        = fp.input :description
+
   = f.input :etc
 
-  = f.buttons do
-    = f.commit_button :button_html => {:class => "primary"}
+  %div.input= f.button :submit, :input_html => {:class => "primary"}
 

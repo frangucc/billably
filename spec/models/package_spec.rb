@@ -3,6 +3,11 @@ require 'spec_helper'
 describe Package do
   describe 'Factories' do
     it { build(:package).valid?.should == true }
+
+    it "should contain at least one image" do
+      package = create :package
+      package.images.should_not be_empty
+    end
   end
 
   describe 'Validations' do
