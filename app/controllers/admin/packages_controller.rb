@@ -3,6 +3,6 @@ class Admin::PackagesController < Admin::AdminController
 
   private
   def showed_columns
-    @showed_columns ||= ['category_id', 'delivery_date', 'our_cost', 'customer_cost', 'name', 'description', 'subscription_id']
+    @showed_columns ||= ['category_id', 'delivery_date', 'our_cost', 'customer_cost', 'name', 'description', 'frequency', 'subscription_id']
   end
 end
