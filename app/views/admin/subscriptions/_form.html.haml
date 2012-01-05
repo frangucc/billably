@@ -49,16 +49,10 @@
 
   %fieldset
     %legend= "Packages"
-    = f.simple_fields_for :packages do |fp|
-      %fieldset.fields
-        = fp.input :delivery_date, :as => :date
-        = fp.input :frequency
-        = fp.input :name
-        = fp.input :our_cost
-        = fp.input :customer_cost
-        = fp.input :description
-        = fp.hidden_field :_destroy
-        = link_to_function "remove", "remove_fields(this)"
+    = f.simple_fields_for :packages do |builder|
+      = render :partial => 'package_fields', :locals => {:f => builder}
+
+  %p= link_to_add_fields "Add package", f, :packages
 
   = f.input :etc
 
