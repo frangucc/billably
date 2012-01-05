@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104204037) do
+ActiveRecord::Schema.define(:version => 20120105094818) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -85,12 +85,15 @@ ActiveRecord::Schema.define(:version => 20120104204037) do
 
   create_table "images", :force => true do |t|
     t.string   "attachment"
-    t.integer  "package_id"
-    t.integer  "merchant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "processing",  :default => false
+    t.boolean  "processing",     :default => false
+    t.string   "imageable_type"
+    t.integer  "imageable_id"
   end
+
+  add_index "images", ["imageable_id"], :name => "index_images_on_imageable_id"
+  add_index "images", ["imageable_type"], :name => "index_images_on_imageable_type"
 
   create_table "merchants", :force => true do |t|
     t.datetime "created_at"
@@ -106,13 +109,16 @@ ActiveRecord::Schema.define(:version => 20120104204037) do
   create_table "packages", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "delivery_date",   :null => false
-    t.integer  "frequency",       :null => false
-    t.string   "name",            :null => false
+    t.date     "delivery_date",                     :null => false
+    t.integer  "frequency",                         :null => false
+    t.string   "name",                              :null => false
     t.integer  "subscription_id"
     t.integer  "our_cost"
     t.integer  "customer_cost"
     t.text     "description"
+    t.boolean  "active",          :default => true
+    t.datetime "activate"
+    t.datetime "deactivate"
   end
 
   add_index "packages", ["subscription_id"], :name => "index_packages_on_subscription_id"
@@ -126,12 +132,11 @@ ActiveRecord::Schema.define(:version => 20120104204037) do
     t.integer  "user_id",       :null => false
     t.string   "card_type"
     t.string   "card_number"
-    t.integer  "billing_id"
-    t.integer  "serving_id"
     t.text     "schedule_yaml"
     t.integer  "chargify_id"
   end
 
+  add_index "purchases", ["chargify_id"], :name => "index_purchases_on_chargify_id"
   add_index "purchases", ["package_id"], :name => "index_purchases_on_package_id"
   add_index "purchases", ["user_id"], :name => "index_purchases_on_user_id"
 
@@ -280,6 +285,8 @@ ActiveRecord::Schema.define(:version => 20120104204037) do
     t.integer  "package_id"
   end
 
+  add_index "schedules", ["package_id"], :name => "index_schedules_on_package_id"
+
   create_table "seo_meta", :force => true do |t|
     t.integer  "seo_meta_id"
     t.string   "seo_meta_type"
@@ -307,6 +314,24 @@ ActiveRecord::Schema.define(:version => 20120104204037) do
   add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
+  create_table "states", :force => true do |t|
+    t.string   "name"
+    t.string   "abbr"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "states", ["abbr"], :name => "index_states_on_abbr"
+  add_index "states", ["name"], :name => "index_states_on_name"
+
+  create_table "states_subscriptions", :force => true do |t|
+    t.integer "state_id"
+    t.integer "subscription_id"
+  end
+
+  add_index "states_subscriptions", ["state_id"], :name => "index_states_subscriptions_on_state_id"
+  add_index "states_subscriptions", ["subscription_id"], :name => "index_states_subscriptions_on_subscription_id"
+
   create_table "subscriptions", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -327,6 +352,9 @@ ActiveRecord::Schema.define(:version => 20120104204037) do
     t.string   "etc"
     t.boolean  "ships_internationally",    :default => false
     t.boolean  "is_active"
+    t.boolean  "active",                   :default => true
+    t.datetime "activate"
+    t.datetime "deactivate"
   end
 
   add_index "subscriptions", ["featured"], :name => "index_subscriptions_on_featured"

@@ -47,18 +47,18 @@
             @subscription.category_ids.include?(category.id), id: dom_id(category)
           = label_tag dom_id(category), category.name
 
-  = f.inputs :name, :description, :our_cost, :customer_cost, :delivery_date, :name => "Package #%i", :for => :packages
-
   %fieldset
     %legend= "Packages"
     = f.simple_fields_for :packages do |fp|
-      %div.fields-for-package
+      %fieldset.fields
         = fp.input :delivery_date, :as => :date
         = fp.input :frequency
         = fp.input :name
         = fp.input :our_cost
         = fp.input :customer_cost
         = fp.input :description
+        = fp.hidden_field :_destroy
+        = link_to_function "remove", "remove_fields(this)"
 
   = f.input :etc
 
